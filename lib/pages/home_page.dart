@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_helper/pages/settings.dart';
+import 'package:health_helper/tasks_list/tasks_list.dart';
 
 class HomepageScreenWidget extends StatefulWidget {
   const HomepageScreenWidget({super.key});
@@ -11,8 +12,9 @@ class HomepageScreenWidget extends StatefulWidget {
 class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
   int _selectedScreen = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(''),
+    TasksListWidget(),
     SettingsScreenWidget(),
+
   ];
 
   void onSelectScreen(int index) {
@@ -49,6 +51,7 @@ class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
             label: 'Настройки',
           ),
         ],
+
         selectedItemColor: Colors.white,
         unselectedItemColor: Color.fromRGBO(56, 102, 65, 1),
         backgroundColor: Color.fromRGBO(106, 153, 78, 1),
