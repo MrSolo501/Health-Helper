@@ -1,44 +1,58 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:health_helper/pages/settings.dart';
 
-class MyApp extends StatelessWidget {
+class HomepageScreenWidget extends StatefulWidget {
+  const HomepageScreenWidget({super.key});
+
+  @override
+  _HomepageScreenWidgetState createState() => _HomepageScreenWidgetState();
+}
+
+class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
+  int _selectedScreen = 0;
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(''),
+    SettingsScreenWidget(),
+  ];
+
+  void onSelectScreen(int index) {
+    if (_selectedScreen == index) return;
+    setState(() {
+      _selectedScreen = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.green),
-      home: Scaffold(
-        backgroundColor: Color.fromRGBO(236, 243, 158, 1),
-        appBar: AppBar(
-          title: Text("Health Helper",
-              style: TextStyle(fontSize: 25, color:Color.fromRGBO(255,255,255,1)),
-              textDirection: TextDirection.ltr),
-              backgroundColor: Color.fromRGBO(49,87, 44,1),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[],
-            ),
+    return Scaffold(
+      backgroundColor: Color.fromRGBO(242, 232, 207, 1),
+      appBar: AppBar(
+        title: Text("Health Helper",
+            style: TextStyle(
+                fontSize: 25, color: Color.fromRGBO(255, 255, 255, 1)),
+            textDirection: TextDirection.ltr),
+        backgroundColor: Color.fromRGBO(106, 153, 78, 1),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: _widgetOptions[_selectedScreen],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedScreen,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Главная',
           ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-          ],
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.grey,
-          backgroundColor: Color.fromRGBO(49,87, 44,1),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Настройки',
+          ),
+        ],
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Color.fromRGBO(56, 102, 65, 1),
+        backgroundColor: Color.fromRGBO(106, 153, 78, 1),
+        onTap: onSelectScreen,
       ),
     );
   }
