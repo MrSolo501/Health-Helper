@@ -13,9 +13,11 @@ class HomepageScreenWidget extends StatefulWidget {
 class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
   int _selectedScreen = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    TasksListWidget(),
+    TaskWidget(),
     EdaScreenWidget(),
+
     SettingsScreenWidget(),
+
   ];
 
   void onSelectScreen(int index) {
