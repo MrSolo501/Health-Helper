@@ -12,8 +12,7 @@ class TaskWidget extends StatefulWidget {
 
 class _TaskWidget extends State<TaskWidget> {
   final todosList = ToDo.todoList();
-  List<ToDo> _foundToDo = [];
-  final _todoController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,6 @@ class _TaskWidget extends State<TaskWidget> {
             ),
             child: Column(
               children: [
-
                 Expanded(
                   child: ListView(
                     children: [
@@ -41,7 +39,6 @@ class _TaskWidget extends State<TaskWidget> {
                           'Расписание',
                           style: TextStyle(
                             fontSize: 40,
-
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -50,7 +47,6 @@ class _TaskWidget extends State<TaskWidget> {
                         ToDoItem(
                           todo: todoo,
                           onToDoChanged: _handleToDoChange,
-
                         ),
                     ],
                   ),
@@ -58,7 +54,6 @@ class _TaskWidget extends State<TaskWidget> {
               ],
             ),
           ),
-
         ],
       ),
     );
@@ -69,12 +64,7 @@ class _TaskWidget extends State<TaskWidget> {
       todo.isDone = !todo.isDone;
     });
   }
-
-
-
-
 }
-
 
 class ToDo {
   String? id;
@@ -91,28 +81,12 @@ class ToDo {
 
   static List<ToDo> todoList() {
     return [
-      ToDo(id: '01', todoText: 'Зарядка',time:'8:00-9:00'),
-      ToDo(id: '02', todoText: 'Завтрак',time:'9:00-10:30' ),
-      ToDo(
-        id: '03',
-        todoText: 'Обед',
-          time:'12:00-14:00'
-      ),
-      ToDo(
-        id: '04',
-        todoText: 'Ужин',
-          time:'16:30-17:30'
-      ),
-      ToDo(
-        id: '05',
-        todoText: 'Тренировка',
-          time:'18:00-20:00'
-      ),
-      ToDo(
-        id: '06',
-        todoText: 'Сон',
-          time:'21:00-23:00'
-      ),
+      ToDo(id: '01', todoText: 'Зарядка', time: '8:00-9:00'),
+      ToDo(id: '02', todoText: 'Завтрак', time: '9:00-10:30'),
+      ToDo(id: '03', todoText: 'Обед', time: '12:00-14:00'),
+      ToDo(id: '04', todoText: 'Ужин', time: '16:30-17:30'),
+      ToDo(id: '05', todoText: 'Тренировка', time: '18:00-20:00'),
+      ToDo(id: '06', todoText: 'Сон', time: '21:00-23:00'),
     ];
   }
 }
@@ -120,7 +94,6 @@ class ToDo {
 class ToDoItem extends StatelessWidget {
   final ToDo todo;
   final onToDoChanged;
-
 
   const ToDoItem({
     Key? key,
@@ -155,18 +128,13 @@ class ToDoItem extends StatelessWidget {
           ),
         ),
         trailing: Container(
-          // padding: EdgeInsets.all(0),
-          // margin: EdgeInsets.symmetric(vertical: 12),
-          height: 16,
-          width: 85,
-          // decoration: BoxDecoration(
-          //   color: Colors.red,
-          //   borderRadius: BorderRadius.circular(5),
-          // ),
-          child: Text(todo.time!,style: TextStyle(fontWeight: FontWeight.bold),)
-        ),
+            height: 16,
+            width: 85,
+            child: Text(
+              todo.time!,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )),
       ),
     );
   }
 }
-
