@@ -13,7 +13,7 @@ class TasksListWidget extends StatelessWidget {
       'Ужин',
       'Сон'
     ];
-    var col = Colors.green;
+    var col = Colors.white70;
 
     return ListView.separated(
       padding: const EdgeInsets.all(8),
@@ -25,18 +25,20 @@ class TasksListWidget extends StatelessWidget {
           height: 50,
           child: Row(
             children: [
-              ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.incomplete_circle_sharp,
-                    color: Colors.red,
-                  ),
-                  label: Text('')),
-              Padding(padding: EdgeInsets.fromLTRB(80,0, 50, 0),
-              child: Text(
-                '${entries[index]}',
-                style: TextStyle(fontSize: 25),
-              )),
+              IconButton(
+                color: Colors.white70,
+                iconSize: 23,
+                icon: Icon(Icons.check_box_outline_blank,color: Colors.lightBlueAccent,),
+                onPressed: () {
+
+                },
+              ),
+              Padding(
+                  padding: EdgeInsets.fromLTRB(80, 0, 50, 0),
+                  child: Text(
+                    '${entries[index]}',
+                    style: TextStyle(fontSize: 25),
+                  )),
             ],
           ),
         );

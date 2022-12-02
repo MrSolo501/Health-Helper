@@ -37,8 +37,13 @@ class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
         backgroundColor: Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,
       ),
-      body: Center(
-        child: _widgetOptions[_selectedScreen],
+      body: IndexedStack(
+        index:_selectedScreen,
+        children: [
+          TasksListWidget(),
+          EdaScreenWidget(),
+          SettingsScreenWidget(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedScreen,
