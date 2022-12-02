@@ -15,9 +15,7 @@ class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
   static const List<Widget> _widgetOptions = <Widget>[
     TaskWidget(),
     EdaScreenWidget(),
-
     SettingsScreenWidget(),
-
   ];
 
   void onSelectScreen(int index) {
@@ -40,9 +38,9 @@ class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
         centerTitle: true,
       ),
       body: IndexedStack(
-        index:_selectedScreen,
+        index: _selectedScreen,
         children: [
-          TasksListWidget(),
+          TaskWidget(),
           EdaScreenWidget(),
           SettingsScreenWidget(),
         ],
