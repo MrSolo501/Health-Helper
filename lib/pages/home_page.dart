@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_helper/pages/settings.dart';
 import 'package:health_helper/tasks_list/tasks_list.dart';
-import 'eda.dart';
+import 'diet.dart';
 
 class HomepageScreenWidget extends StatefulWidget {
   const HomepageScreenWidget({super.key});

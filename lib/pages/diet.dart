@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:health_helper/pages/breakfast_page.dart';
-import 'breakfast_page.dart';
-import 'lunch_page.dart';
-import 'dinner_page.dart';
+import 'package:health_helper/pages/diet_pages/breakfast_page.dart';
+import 'diet_pages/breakfast_page.dart';
+import 'diet_pages/lunch_page.dart';
+import 'diet_pages/dinner_page.dart';
 
 final List<String> entries = <String>['Завтрак', 'Обед', 'Ужин'];
 final List<int> colorCodes = <int>[600, 600, 600];
@@ -22,14 +22,14 @@ class EdaScreenWidget extends StatelessWidget {
             },
             child: Container(
               margin: const EdgeInsets.all(10.0),
-              height: 100,
+              height: 200,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: Colors.lightGreen),
               child: Center(
                   child: Text(
                 'Завтрак',
-                style: TextStyle(fontSize: 40),
+                style: TextStyle(fontSize: 40,color: Colors.white),
               )),
             )),
         GestureDetector(
@@ -39,14 +39,14 @@ class EdaScreenWidget extends StatelessWidget {
             },
             child: Container(
           margin: const EdgeInsets.all(10.0),
-          height: 100,
+          height: 200,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.lightGreen),
           child: Center(
               child: Text(
             'Обед',
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(fontSize: 40,color:Colors.white),
           )),
         )),
         GestureDetector(
@@ -56,14 +56,14 @@ class EdaScreenWidget extends StatelessWidget {
             },
             child: Container(
           margin: const EdgeInsets.all(10.0),
-          height: 100,
+          height: 200,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.lightGreen),
           child: Center(
               child: Text(
             'Ужин',
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(fontSize: 40,color:Colors.white),
           )),
         )),
       ],
