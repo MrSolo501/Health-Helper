@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_helper/recipe/recipe.dart';
+import 'package:health_helper/recipe/recipesfornormaldinner.dart';
 
 class dinnerScreen extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class dinnerScreen extends StatelessWidget {
           ),
           centerTitle: true,
           backgroundColor: Color.fromRGBO(106, 153, 78, 1)),
-      body:Recipe(title:'Овощная паста из кабачков',cooktime: '40',Urlcode: 'https://grandkulinar.ru/uploads/posts/2019-03/1553165797_ovoshchnaya-pasta-iz-kabachkov-s-celnozernovoj-lapshoj.jpg',)
+      body:Recipesfornormaldinner()
     );
   }
 }

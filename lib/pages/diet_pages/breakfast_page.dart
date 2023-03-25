@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_helper/recipe/recipe.dart';
+import 'package:health_helper/recipe/recipesfornormalbreakfast.dart';
 
 
 class breakfastScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class breakfastScreen extends StatelessWidget {
           ),
           centerTitle: true,
           backgroundColor: Color.fromRGBO(106, 153, 78, 1)),
-      body: Recipe(title:'Горячая яблочная каша',cooktime: '30',Urlcode: 'https://grandkulinar.ru/uploads/posts/2019-02/1550495538_goryachaya-yablochnaya-kasha-dieta-whole30.jpg',)
+      body: Recipesfornormalbreakfast()
     );
   }
 }
