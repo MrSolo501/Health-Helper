@@ -5,7 +5,11 @@ packages:
     dependency: transitive
     description:
       name: archive
+<<<<<<< Updated upstream
       sha256: d6347d54a2d8028e0437e3c099f66fdb8ae02c4720c1e7534c9f24c10351f85d
+=======
+      sha256: ed7cc591a948744994714375caf9a2ce89e1d82e8243997c8a2994d57181c212
+>>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "3.3.6"
@@ -13,7 +17,11 @@ packages:
     dependency: transitive
     description:
       name: args
+<<<<<<< Updated upstream
       sha256: "4cab82a83ffef80b262ddedf47a0a8e56ee6fbf7fe21e6e768b02792034dd440"
+=======
+      sha256: b003c3098049a51720352d219b0bb5f219b60fbfb68e7a4748139a06a5676515
+>>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
@@ -45,7 +53,11 @@ packages:
     dependency: transitive
     description:
       name: checked_yaml
+<<<<<<< Updated upstream
       sha256: "3d1505d91afa809d177efd4eed5bb0eb65805097a1463abdd2add076effae311"
+=======
+      sha256: dd007e4fb8270916820a0d66e24f619266b60773cddd082c6439341645af2659
+>>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
@@ -118,6 +130,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.11.0"
+  flutter_lints:
+    dependency: "direct dev"
+    description:
+      name: flutter_lints
+      sha256: aeb0b80a8b3709709c9cc496cdc027c5b3216796bc0af0ce1007eaf24464fd4c
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -127,7 +147,11 @@ packages:
     dependency: transitive
     description:
       name: image
+<<<<<<< Updated upstream
       sha256: "8e9d133755c3e84c73288363e6343157c383a0c6c56fc51afcc5d4d7180306d6"
+=======
+      sha256: f6ffe2895e3c86c6ad5a27e6302cf807403463e397cb2f0c580f619ac2fa588b
+>>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "3.3.0"
@@ -143,10 +167,25 @@ packages:
     dependency: transitive
     description:
       name: json_annotation
+<<<<<<< Updated upstream
       sha256: c33da08e136c3df0190bd5bbe51ae1df4a7d96e7954d1d7249fea2968a72d317
       url: "https://pub.dev"
     source: hosted
     version: "4.8.0"
+=======
+      sha256: "3520fa844009431b5d4491a5a778603520cdc399ab3406332dcc50f93547258c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.7.0"
+  lints:
+    dependency: transitive
+    description:
+      name: lints
+      sha256: "5e4a9cd06d447758280a8ac2405101e0e2094d2a1dbdd3756aec3fe7775ba593"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
+>>>>>>> Stashed changes
   matcher:
     dependency: transitive
     description:
@@ -191,7 +230,11 @@ packages:
     dependency: transitive
     description:
       name: pointycastle
+<<<<<<< Updated upstream
       sha256: c3120a968135aead39699267f4c74bc9a08e4e909e86bc1b0af5bfd78691123c
+=======
+      sha256: db7306cf0249f838d1a24af52b5a5887c5bf7f31d8bb4e827d071dc0939ad346
+>>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "3.7.2"

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:health_helper/pages/settings.dart';
 import 'package:health_helper/tasks_list/tasks_list.dart';
+import 'package:health_helper/widgets/homePageScreenWidgets.dart';
 import 'diet.dart';
 
-class HomepageScreenWidget extends StatefulWidget {
-  const HomepageScreenWidget({super.key});
+class HomePageScreen extends StatefulWidget {
+  const HomePageScreen({super.key});
 
   @override
-  _HomepageScreenWidgetState createState() => _HomepageScreenWidgetState();
+  _HomePageScreenState createState() => _HomePageScreenState();
 }
 
-class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
+class _HomePageScreenState extends State<HomePageScreen> {
   int _selectedScreen = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     TaskWidget(),
@@ -30,7 +31,7 @@ class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
-        title: Text("Health Helper",
+        title: const Text("Health Helper",
             style: TextStyle(
                 fontSize: 25, color: Color.fromRGBO(255, 255, 255, 1)),
             textDirection: TextDirection.ltr),
@@ -39,15 +40,16 @@ class _HomepageScreenWidgetState extends State<HomepageScreenWidget> {
       ),
       body: IndexedStack(
         index: _selectedScreen,
-        children: [
-          TaskWidget(),
+        children: const [
+          //TaskWidget(),
+          HomePageScreenWidgets(),
           EdaScreenWidget(),
           SettingsScreenWidget(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedScreen,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Главная',

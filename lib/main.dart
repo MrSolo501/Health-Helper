@@ -4,14 +4,15 @@ import 'pages/home_page.dart';
 import 'package:health_helper/pages/welcome_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       title: 'Health Helper',
       theme: ThemeData(

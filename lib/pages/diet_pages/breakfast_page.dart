@@ -7,7 +7,7 @@ class breakfastScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Завтрак',
             style: TextStyle(fontSize: 25,color: Colors.white),
           ),
