@@ -3,13 +3,13 @@ import 'package:health_helper/recipe/extened_recipe.dart';
 
 
 class you{
-  static const int IWB=20;
+  static const int IWB=27;
 }
 
 class Dishes{
-  final String cooktime;
-  final String title;
-  final String image;
+    final String cooktime;
+    final String title;
+    final String image;
 
   Dishes({required this.cooktime,required this.title,required this.image});
 
@@ -18,27 +18,63 @@ class Dishes{
 
 
 
-class Recipesfornormallunch extends StatelessWidget {
+class Recipesbreakfast extends StatelessWidget {
 
-  final _dishes=[Dishes( cooktime: '1 час 30 мин',
-    title: 'Уха, мясное блюдо из запечённой птицы с гарниром из овощей',
-    image: 'https://img.povar.ru/main-micro/3c/e3/c3/93/uha_s_ovoshami-575658.JPG',)
-    ,Dishes( cooktime: '2 часа',
-      title: 'Филе индейки, отварная картошка',
-      image: 'https://static.1000.menu/img/content/29617/file-indeiki-s-kartoshkoi_1542191329_11_max.jpg',)
+  final _dishes=[Dishes( cooktime: '7 мин',
+      title: 'нежирный творог с фруктами',
+      image: 'assets/images/завтрак1.jpg',)
+    ,Dishes( cooktime: '40 мин',
+      title: 'Каша на молоке с маслом, отварное яйцо',
+      image: 'assets/images/завтрак2.jpg',)
+    ,Dishes( cooktime: '10 мин',
+      title: 'яичница глазунья с помидорами и колбасой',
+      image: 'assets/images/завтрак3.jpg',)
     ,Dishes( cooktime: '30 мин',
-      title: 'Куриная грудка, гречка с грибами',
-      image: 'https://s1.eda.ru/StaticContent/Photos/110810174633/150615125434/p_O.jpg',)
-    ,Dishes( cooktime: '1 час 20 мин',
-      title: 'Плов из свинины',
-      image: 'https://cdn.vkuso.ru/uploads/ovsyanaya-kasha-s-izyumom-k-zavtraku-844.jpg',)
-    ,Dishes( cooktime: '50',
-      title: 'Гуляш из филе курицы, гарнир из крупы',
-      image: '',)
+      title: 'молочная каша с овсяными хлопьями и изюмом, кофе с молоком',
+      image: 'assets/images/завтрак4.jpg',)
+    ,Dishes( cooktime: '1 час',
+      title: 'запеканка творожная с мукой',
+      image: 'assets/images/завтрак5.jpg',)
     ,];
   @override
   Widget build(BuildContext context) {
-
+    if(you.IWB>25){
+      _dishes.clear();
+      _dishes.addAll([Dishes( cooktime: '30 мин',
+        title: 'Сырники из творога с мукой',
+        image: 'assets/images/завтрак1(fat).jpg',)
+        ,Dishes( cooktime: '35 мин',
+          title: 'Овсяная каша с грушей ',
+          image: 'assets/images/завтрак2(fat).jpg',)
+        ,Dishes( cooktime: '20 мин',
+          title: 'Гречневая каша с молоком',
+          image: 'assets/images/завтрак3(fat).jpg',)
+        ,Dishes( cooktime: '25 мин',
+          title: 'Рисовая каша на воде',
+          image: 'assets/images/завтрак4(fat).jpg',)
+        ,Dishes( cooktime: '20 мин',
+          title: 'Молочная лапша',
+          image: 'assets/images/завтрак5(fat).jpg',)
+        ,]);
+    }else if (you.IWB<18){
+      _dishes.clear();
+      _dishes.addAll([Dishes( cooktime: '20 мин',
+        title: 'Омлет с сыром и ветчиной',
+        image: 'assets/images/завтрак1(low).jpg',)
+        ,Dishes( cooktime: '10 мин',
+          title: 'Овсяная каша с орехами и бананом',
+          image: 'assets/images/завтрак2(low).jpg',)
+        ,Dishes( cooktime: '1 час',
+          title: 'Рисовая каша с бананами и мускатным орехом',
+          image: 'assets/images/завтрак3(low).jpg',)
+        ,Dishes( cooktime: '40 мин',
+          title: 'гречневая каша с тушёнкой',
+          image: 'assets/images/завтрак4(low).jpg',)
+        ,Dishes( cooktime: '1 час',
+          title: 'макароны с мясными тефтелями',
+          image: 'assets/images/завтрак5(low).jpg',)
+        ,]);
+    }
     return ListView.builder(
         itemCount: 5,
         itemExtent: 180,
@@ -46,13 +82,7 @@ class Recipesfornormallunch extends StatelessWidget {
           final dishes=_dishes[index];
           return GestureDetector(
               onTap: () {
-                //Navigator.push(context,)
-                //MaterialPageRoute(builder: (context) =>
-                //DescriptionRecipe(
-                //urlimage: 'https://grandkulinar.ru/uploads/posts/2019-02/1550495538_goryachaya-yablochnaya-kasha-dieta-whole30.jpg',
-                //title: 'Горячая яблочная каша',
-                //ingridients: '6 яблок Ханикрисп (примерно 0,7 кг.)',
-                //titlestepscooking: '',)));
+
               },
               child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
@@ -68,7 +98,7 @@ class Recipesfornormallunch extends StatelessWidget {
                           colorFilter: ColorFilter.mode(
                               Colors.black.withOpacity(0.35),
                               BlendMode.multiply),
-                          image: NetworkImage(dishes.image),
+                          image: AssetImage(dishes.image),
                           fit: BoxFit.cover)),
                   child: Stack(
                     children: [

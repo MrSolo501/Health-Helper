@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_helper/recipe/recipesfornormaldinner.dart';
+import 'package:health_helper/recipe/recipesdinner.dart';
 
 class dinnerScreen extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class dinnerScreen extends StatelessWidget {
           ),
           centerTitle: true,
           backgroundColor: Color.fromRGBO(106, 153, 78, 1)),
-      body:Recipesfornormaldinner()
+      body:Recipesdinner()
     );
   }
 }

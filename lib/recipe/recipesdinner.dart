@@ -3,7 +3,7 @@ import 'package:health_helper/recipe/extened_recipe.dart';
 
 
 class you{
-  static const int IWB=20;
+  static const int IWB=27;
 }
 
 class Dishes{
@@ -18,27 +18,63 @@ class Dishes{
 
 
 
-class Recipesfornormaldinner extends StatelessWidget {
+class Recipesdinner extends StatelessWidget {
 
   final _dishes=[Dishes( cooktime: '1 час',
     title: 'Лёгкое рыбное блюдо без гарнира и салат',
-    image: 'https://static.1000.menu/res/640/img/content-v2/4f/70/22734/treska-po-polski-na-rybnom-bulone-s-kornem-seldereya_1615366998_11_max.jpg',)
+    image: 'assets/images/ужин1.jpg',)
     ,Dishes( cooktime: '25 мин',
       title: 'Салат с тунцом консервированным',
-      image: 'https://static.1000.menu/img/content-v2/bc/14/42904/salat-s-tuncom-konservirovannym-klassicheskii_1615712147_10_max.jpg',)
+      image: 'assets/images/ужин2.jpg',)
     ,Dishes( cooktime: '40 мин',
       title: 'Рецепт гречки с грибами',
-      image: 'https://img1.russianfood.com/dycontent/images_upl/495/big_494596.jpg',)
+      image: 'assets/images/ужин3.jpg',)
     ,Dishes( cooktime: '20 мин',
       title: 'Паста с сыром',
-      image: 'https://www.djurenko.com/wp-content/uploads/2017/01/spaghetti-formaggio_08.jpg',)
+      image: 'assets/images/ужин4.jpg',)
     ,Dishes( cooktime: '1 час',
       title: 'грудка индейки отварная, гречка',
-      image: 'https://static.1000.menu/img/content/32386/indeika-otvarnaya_1549829993_6_max.jpg',)
+      image: 'assets/images/ужин5.jpg',)
     ,];
   @override
   Widget build(BuildContext context) {
-
+    if(you.IWB>25){
+      _dishes.clear();
+      _dishes.addAll([Dishes( cooktime: '30 мин',
+        title: 'Рыба на пару',
+        image: 'assets/images/ужин1(fat).jpg',)
+        ,Dishes( cooktime: '45 мин',
+          title: 'Печень говядины',
+          image: 'assets/images/ужин2(fat).jpg',)
+        ,Dishes( cooktime: '30 мин',
+          title: 'Мясная запеканка',
+          image: 'assets/images/ужин3(fat).jpg',)
+        ,Dishes( cooktime: '45 мин',
+          title: 'Удон с курицей и овощами',
+          image: 'assets/images/ужин4(fat).jpg',)
+        ,Dishes( cooktime: '40 мин',
+          title: 'Тушёная капуста с грибами ',
+          image: 'assets/images/ужин5(fat).jpg',)
+        ,]);
+    }else if (you.IWB<18){
+      _dishes.clear();
+      _dishes.addAll([Dishes( cooktime: '1 час ',
+        title: 'Куриное филе, отварной картофель',
+        image: 'assets/images/обед1.jpg',)
+        ,Dishes( cooktime: '20 мин',
+          title: 'Треска с рисом с добавлением сливочного соуса',
+          image: 'assets/images/обед2.jpg',)
+        ,Dishes( cooktime: '40 мин',
+          title: 'Рецепт пюре из картошки с запеченным минтаем',
+          image: 'assets/images/обед3.jpg',)
+        ,Dishes( cooktime: '20 минут',
+          title: 'Яичная лапша со свининой и овощами',
+          image: 'assets/images/обед4.jpg',)
+        ,Dishes( cooktime: '50 мин',
+          title: 'мясо по французски из свинины с помидорами',
+          image: 'assets/images/обед5.jpg',)
+        ,]);
+    }
     return ListView.builder(
         itemCount: 5,
         itemExtent: 180,
@@ -46,13 +82,7 @@ class Recipesfornormaldinner extends StatelessWidget {
           final dishes=_dishes[index];
           return GestureDetector(
               onTap: () {
-                //Navigator.push(context,)
-                //MaterialPageRoute(builder: (context) =>
-                //DescriptionRecipe(
-                //urlimage: 'https://grandkulinar.ru/uploads/posts/2019-02/1550495538_goryachaya-yablochnaya-kasha-dieta-whole30.jpg',
-                //title: 'Горячая яблочная каша',
-                //ingridients: '6 яблок Ханикрисп (примерно 0,7 кг.)',
-                //titlestepscooking: '',)));
+
               },
               child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
@@ -68,7 +98,7 @@ class Recipesfornormaldinner extends StatelessWidget {
                           colorFilter: ColorFilter.mode(
                               Colors.black.withOpacity(0.35),
                               BlendMode.multiply),
-                          image: NetworkImage(dishes.image),
+                          image: AssetImage(dishes.image),
                           fit: BoxFit.cover)),
                   child: Stack(
                     children: [

@@ -66,13 +66,52 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/
+    - assets/images/завтрак1.jpg
+    - assets/images/завтрак2.jpg
+    - assets/images/завтрак3.jpg
+    - assets/images/завтрак4.jpg
+    - assets/images/завтрак5.jpg
+    - assets/images/завтрак1(fat).jpg
+    - assets/images/завтрак2(fat).jpg
+    - assets/images/завтрак3(fat).jpg
+    - assets/images/завтрак4(fat).jpg
+    - assets/images/завтрак5(fat).jpg
+    - assets/images/завтрак1(low).jpg
+    - assets/images/завтрак2(low).jpg
+    - assets/images/завтрак3(low).jpg
+    - assets/images/завтрак4(low).jpg
+    - assets/images/завтрак5(low).jpg
+    - assets/images/обед1.jpg
+    - assets/images/обед2.jpg
+    - assets/images/обед3.jpg
+    - assets/images/обед4.jpg
+    - assets/images/обед5.jpg
+    - assets/images/ужин1.jpg
+    - assets/images/ужин2.jpg
+    - assets/images/ужин3.jpg
+    - assets/images/ужин4.jpg
+    - assets/images/ужин5.jpg
+    - assets/images/ужин1(fat).jpg
+    - assets/images/ужин2(fat).jpg
+    - assets/images/ужин3(fat).jpg
+    - assets/images/ужин4(fat).jpg
+    - assets/images/ужин5(fat).jpg
+    - assets/images/обед1(fat).jpg
+    - assets/images/обед2(fat).jpg
+    - assets/images/обед3(fat).jpg
+    - assets/images/обед4(fat).jpg
+    - assets/images/обед5(fat).jpg
+    - assets/images/обед1(low).jpg
+    - assets/images/обед2(low).jpg
+    - assets/images/обед3(low).jpg
+    - assets/images/обед4(low).jpg
+    - assets/images/обед5(low).jpg
     - assets/icons/
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+#   To add assets to your application, add an assets section, like this:
+#   assets:
+#     - assets/images/завтрак1.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

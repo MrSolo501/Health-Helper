@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_helper/recipe/recipesfornormallunch.dart';
+import 'package:health_helper/recipe/recipeslunch.dart';
 
 
 
@@ -14,7 +14,7 @@ class lunchScreen extends StatelessWidget {
           ),
           centerTitle: true,
           backgroundColor: Color.fromRGBO(106, 153, 78, 1)),
-        body:Recipesfornormallunch()
+        body:Recipeslunch()
     );
   }
 }
