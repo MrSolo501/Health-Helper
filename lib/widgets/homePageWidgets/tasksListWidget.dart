@@ -1,59 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:health_helper/pages/home_page.dart';
 
+
 class TaskWidget extends StatefulWidget {
   const TaskWidget({super.key});
 
   @override
-  State<StatefulWidget> createState() {
-    return _TaskWidget();
-  }
+  State<TaskWidget> createState() => _TaskWidgetState();
 }
 
-class _TaskWidget extends State<TaskWidget> {
-  final todosList = ToDo.todoList();
-
-
+class _TaskWidgetState extends State<TaskWidget> {
+   final todosList = ToDo.todoList();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(242, 232, 207, 1),
-      body: Stack(
+    return Container(
+      decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.green,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.white),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 15,
+      ),
+      width: 350,
+      height: 560,
+      child: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 15,
+            margin: const EdgeInsets.only(
+              top: 10,
+              bottom: 10,
             ),
-            child: Column(
-              children: [
-                Expanded(
-                  child: ListView(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(
-                          top: 20,
-                          bottom: 20,
-                        ),
-                        child: Text(
-                          'Расписание',
-                          style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      for (ToDo todoo in todosList)
-                        ToDoItem(
-                          todo: todoo,
-                          onToDoChanged: _handleToDoChange,
-                        ),
-                    ],
-                  ),
-                )
-              ],
+            child: const Text(
+              'Расписание',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
+          for (ToDo todoo in todosList)
+            ToDoItem(
+              todo: todoo,
+              onToDoChanged: _handleToDoChange,
+            ),
         ],
       ),
     );
@@ -86,7 +79,7 @@ class ToDo {
       ToDo(id: '03', todoText: 'Обед', time: '12:00-14:00'),
       ToDo(id: '04', todoText: 'Ужин', time: '16:30-17:30'),
       ToDo(id: '05', todoText: 'Тренировка', time: '18:00-20:00'),
-      ToDo(id: '06', todoText: 'Сон', time: '21:00-23:00'),
+      ToDo(id: '06', todoText: 'Сон', time: '23:00'),
     ];
   }
 }
@@ -104,16 +97,21 @@ class ToDoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: 14),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.green,
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.white,
+      ),
       child: ListTile(
         onTap: () {
-          // print('Clicked on Todo Item.');
           onToDoChanged(todo);
         },
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 3.0, horizontal: 16.0),
         tileColor: Colors.white,
         leading: Icon(
           todo.isDone ? Icons.check_box : Icons.check_box_outline_blank,
@@ -128,11 +126,11 @@ class ToDoItem extends StatelessWidget {
           ),
         ),
         trailing: Container(
-            height: 16,
-            width: 85,
+            height: 14,
+            width: 80,
             child: Text(
               todo.time!,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             )),
       ),
     );

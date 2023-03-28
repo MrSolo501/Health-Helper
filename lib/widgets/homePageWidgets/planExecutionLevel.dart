@@ -26,18 +26,16 @@ class _PlanExecutionLevelState extends State<PlanExecutionLevel> {
             builder: (BuildContext context, dynamic value, Widget? child) {
               return Container(
                 padding: const EdgeInsets.all(14),
-                width: 300,
+                width: 350,
                 height: 122,
                 decoration: BoxDecoration(
+                   border: Border.all(
+                    color:Colors.green,
+                    width: 1,
+                  ),
                   borderRadius: BorderRadius.circular(20.0),
                   color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.lightBlue.withOpacity(0.2),
-                      spreadRadius: 3,
-                      blurRadius: 11,
-                    ),
-                  ],
+                 
                 ),
                 child: Column(
                   children: [

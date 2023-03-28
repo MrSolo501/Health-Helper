@@ -31,15 +31,13 @@ class _DateWidgetState extends State<DateWidget> {
             padding: const EdgeInsets.all(16),
             
             decoration: BoxDecoration(
+               border: Border.all(
+                    color:Colors.green,
+                    width: 1,
+                  ),
               borderRadius: BorderRadius.circular(20.0),
               color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.lightBlue.withOpacity(0.2),
-                  spreadRadius: 3,
-                  blurRadius: 11,
-                ),
-              ],
+              
             ),
             child: RichText(
             

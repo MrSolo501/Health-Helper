@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_helper/pages/settings.dart';
-import 'package:health_helper/tasks_list/tasks_list.dart';
+import 'package:health_helper/widgets/homePageWidgets/tasksListWidget.dart';
 import 'package:health_helper/widgets/homePageScreenWidgets.dart';
 import 'diet.dart';
 

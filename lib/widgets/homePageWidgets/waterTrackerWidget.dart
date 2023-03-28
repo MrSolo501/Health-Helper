@@ -22,18 +22,16 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
         child: Container(
           padding:
               const EdgeInsets.symmetric(vertical: 13, horizontal: 12),
-          width: 230,
-          height: 160,
+          width: 350,
+          height: 140,
           decoration: BoxDecoration(
+             border: Border.all(
+                    color:Colors.green,
+                    width: 1,
+                  ),
             borderRadius: BorderRadius.circular(20.0),
             color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.lightBlue.withOpacity(0.2),
-                spreadRadius: 3,
-                blurRadius: 11,
-              ),
-            ],
+            
           ),
           child: Column(
             
@@ -57,7 +55,7 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
                 ),
               ),
               const SizedBox(
-                height: 15,
+                height: 20,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -68,7 +66,7 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
                 },
                 style: ButtonStyle(
                   fixedSize:
-                      MaterialStateProperty.all(const Size(186, 49)),
+                      MaterialStateProperty.all(const Size(240, 49)),
                   backgroundColor: MaterialStateProperty.all(
                       Colors.lightBlue.shade100),
                 ),
