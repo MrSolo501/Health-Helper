@@ -1,6 +1,8 @@
 import 'package:health_helper/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
+import 'login_screen.dart';
+
 
 
 
@@ -75,7 +77,7 @@ class WelcomeScreen extends StatelessWidget {
 
                         context,
                         MaterialPageRoute(
-                          builder: (_) => HomePageScreen(),
+                          builder: (_) => LoginScreen(),
                         ),
                       );
                     },
