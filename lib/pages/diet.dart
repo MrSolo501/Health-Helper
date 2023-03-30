@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/diet_pages/breakfast_page.dart';
 import 'diet_pages/breakfast_page.dart';
 import 'diet_pages/lunch_page.dart';
@@ -22,14 +23,14 @@ class EdaScreenWidget extends StatelessWidget {
             },
             child: Container(
               margin: const EdgeInsets.all(10.0),
-              height: 200,
+              height: 200.h,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: Colors.lightGreen),
               child: Center(
                   child: Text(
                 'Завтрак',
-                style: TextStyle(fontSize: 40,color: Colors.white),
+                style: TextStyle(fontSize: 40.h,color: Colors.white),
               )),
             )),
         GestureDetector(
@@ -39,14 +40,14 @@ class EdaScreenWidget extends StatelessWidget {
             },
             child: Container(
           margin: const EdgeInsets.all(10.0),
-          height: 200,
+          height: 200.h,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.lightGreen),
           child: Center(
               child: Text(
             'Обед',
-            style: TextStyle(fontSize: 40,color:Colors.white),
+            style: TextStyle(fontSize: 40.h,color:Colors.white),
           )),
         )),
         GestureDetector(
@@ -56,14 +57,14 @@ class EdaScreenWidget extends StatelessWidget {
             },
             child: Container(
           margin: const EdgeInsets.all(10.0),
-          height: 200,
+          height: 200.h,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.lightGreen),
           child: Center(
               child: Text(
             'Ужин',
-            style: TextStyle(fontSize: 40,color:Colors.white),
+            style: TextStyle(fontSize: 40.h,color:Colors.white),
           )),
         )),
       ],

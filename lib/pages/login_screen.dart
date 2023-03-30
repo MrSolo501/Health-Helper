@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/result_screen.dart';
 import 'home_page.dart';
 
@@ -44,9 +45,9 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
-        title: const Text("Health Helper",
+        title:  Text("Health Helper",
             style: TextStyle(
-                fontSize: 25, color: Color.fromRGBO(255, 255, 255, 1)),
+                fontSize: 25.h, color: Color.fromRGBO(255, 255, 255, 1)),
             textDirection: TextDirection.ltr),
         backgroundColor: Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,
@@ -78,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               TextFormField(
                 controller: _heightController,
                 maxLength: 3,
@@ -129,11 +130,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(20.0),
                     )
                   ),
-                  child: const Text('Рассчитать ИМТ',
+                  child:  Text('Рассчитать ИМТ',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+                      fontSize: 16.0.h,
                     ),),
               ),
             ]

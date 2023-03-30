@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
 
 
@@ -90,7 +91,7 @@ class Recipesbreakfast extends StatelessWidget {
                       .of(context)
                       .size
                       .width,
-                  height: 180,
+                  height: 180.h,
                   decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(12),
@@ -107,7 +108,7 @@ class Recipesbreakfast extends StatelessWidget {
                           padding: EdgeInsets.symmetric(horizontal: 0.5),
                           child: Text(
                             dishes.title,
-                            style: TextStyle(fontSize: 25, color: Colors.white),
+                            style: TextStyle(fontSize: 23.h, color: Colors.white),
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
                             textAlign: TextAlign.center,

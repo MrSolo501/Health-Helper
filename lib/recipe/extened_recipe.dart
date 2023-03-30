@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DescriptionRecipe extends StatelessWidget {
   final String urlimage;
@@ -19,9 +20,9 @@ class DescriptionRecipe extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
+          margin: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
           width: MediaQuery.of(context).size.width,
-          height: 180,
+          height: 180.h,
           decoration: BoxDecoration(
               color: Colors.black,
               borderRadius: BorderRadius.circular(12),
@@ -34,7 +35,7 @@ class DescriptionRecipe extends StatelessWidget {
         Center(child:Text(
           title,style:TextStyle(color:Colors.black,fontSize: 18)
         )),
-        SizedBox(height: 12),
+        SizedBox(height: 12.h),
         Text('Ингридиенты'
             ,style:TextStyle(color:Colors.black,fontSize: 18)
         ),

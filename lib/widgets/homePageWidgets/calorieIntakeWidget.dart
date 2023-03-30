@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class CalorieIntakeWidget extends StatefulWidget {
   const CalorieIntakeWidget({super.key});
 
@@ -24,8 +26,8 @@ class _CalorieIntakeWidgetState extends State<CalorieIntakeWidget> {
             });
           },
           child: Container(
-            width: 150,
-            height: 150,
+            width: 150.w,
+            height: 150.h,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
                border: Border.all(
@@ -39,18 +41,18 @@ class _CalorieIntakeWidgetState extends State<CalorieIntakeWidget> {
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(children: [
-                const TextSpan(
+                 TextSpan(
                   text: 'Норма калорий на сегодня: ',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 20.h,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
                 ),
                 TextSpan(
                     text: '$_calorieIntake🔥',
-                    style: const TextStyle(
+                    style:  TextStyle(
                         color: Colors.red,
-                        fontSize: 30,
+                        fontSize: 30.h,
                         fontWeight: FontWeight.bold))
               ]),
             ),

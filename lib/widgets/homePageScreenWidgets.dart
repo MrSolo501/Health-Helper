@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/widgets/homePageWidgets/tasksListWidget.dart';
 import 'package:health_helper/widgets/homePageWidgets/calorieIntakeWidget.dart';
 import 'package:health_helper/widgets/homePageWidgets/dateWidget.dart';
@@ -21,33 +22,33 @@ class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
     return ListView(children: [
       Column(
         children:  [
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: 20.h,
           ),
           const TaskWidget(),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: 20.h,
           ),
-          const SizedBox(
-            width: 20,
+           SizedBox(
+            width: 20.h,
           ),
           const WaterTrackerWidget(),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: 20.h,
           ),
           const PlanExecutionLevel(),
-          const SizedBox(height: 20,),
+           SizedBox(height: 20.h,),
           Row(
-            children:const [
+            children: [
               SizedBox(
-                width: 30,
+                width: 30.h,
               ),
-              CalorieIntakeWidget(),
-              SizedBox(width: 50,),
-              ReminerOfWaterWidget(),
+              const CalorieIntakeWidget(),
+              SizedBox(width: 20.w,),
+              const ReminerOfWaterWidget(),
             ],
           ),
-          const SizedBox(height: 3,),
+           SizedBox(height: 3.h,),
           const ReminerOfSleepWidget(),
         ],
       ),

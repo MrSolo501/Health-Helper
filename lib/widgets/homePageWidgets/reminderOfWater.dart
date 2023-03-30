@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ReminerOfWaterWidget extends StatefulWidget {
   const ReminerOfWaterWidget({super.key});
 
@@ -20,8 +22,8 @@ class _ReminerOfWaterWidgetState extends State<ReminerOfWaterWidget> {
         });
       },
       child: Container(
-        width: 150,
-        height: 150,
+        width: 150.w,
+        height: 150.h,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
            border: Border.all(

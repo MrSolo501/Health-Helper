@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/home_page.dart';
 
 import '../widgets/bmi_calculator.dart';
@@ -25,6 +26,7 @@ class BmiResultScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text("Health Helper",
             style: TextStyle(
                 fontSize: 25, color: Color.fromRGBO(255, 255, 255, 1)),
@@ -40,22 +42,22 @@ class BmiResultScreen extends StatelessWidget {
               getResult(),
               style: TextStyle(
                 color: Color.fromRGBO(56, 102, 65, 1),
-                fontSize: 22.0,
+                fontSize: 22.0.h,
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
-              height: 16.0,
+              height: 16.0.h,
             ),
             Text(
               'Индекс массы тела: ${bmiResult.toStringAsFixed(1)}',
               style: TextStyle(
                 color: Color.fromRGBO(56, 102, 65, 1),
-                fontSize: 18.0,
+                fontSize: 18.0.h,
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 20.0.h,
             ),
             TextButton(
               onPressed: () {
@@ -72,11 +74,11 @@ class BmiResultScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.0),
                   )
               ),
-              child: const Text('Приступим',
+              child:  Text('Приступим',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.0,
+                  fontSize: 16.0.h,
                 ),),
             ),
           ],

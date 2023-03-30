@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/home_page.dart';
 
 
@@ -17,27 +18,27 @@ class _TaskWidgetState extends State<TaskWidget> {
       decoration: BoxDecoration(
           border: Border.all(
             color: Colors.green,
-            width: 1,
+            width: 1.w,
           ),
           borderRadius: BorderRadius.circular(20.0),
           color: Colors.white),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15,
-        vertical: 15,
+      padding:  EdgeInsets.symmetric(
+        horizontal: 15.w,
+        vertical: 15.h,
       ),
-      width: 350,
-      height: 560,
+      width: 320.w,
+      height: 560.h,
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(
-              top: 10,
-              bottom: 10,
+            margin:  EdgeInsets.only(
+              top: 10.h,
+              bottom: 10.h,
             ),
-            child: const Text(
+            child:  Text(
               'Расписание',
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 30.h,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -101,7 +102,7 @@ class ToDoItem extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green,
-          width: 1,
+          width: 1.w,
         ),
         borderRadius: BorderRadius.circular(20.0),
         color: Colors.white,
@@ -111,8 +112,8 @@ class ToDoItem extends StatelessWidget {
           onToDoChanged(todo);
         },
         contentPadding:
-            const EdgeInsets.symmetric(vertical: 3.0, horizontal: 16.0),
-        tileColor: Colors.white,
+             EdgeInsets.symmetric(vertical: 3.0.h, horizontal: 16.0.w),
+       
         leading: Icon(
           todo.isDone ? Icons.check_box : Icons.check_box_outline_blank,
           color: Colors.lightGreen,
@@ -120,17 +121,17 @@ class ToDoItem extends StatelessWidget {
         title: Text(
           todo.todoText!,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 16.h,
             color: Colors.black,
             decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
         ),
         trailing: Container(
-            height: 14,
-            width: 80,
+            height: 14.h,
+            width: 80.w,
             child: Text(
               todo.time!,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.h),
             )),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SettingsScreenWidget extends StatelessWidget {
   const SettingsScreenWidget({Key? key}) : super(key: key);
@@ -27,12 +28,12 @@ class SettingsScreenWidget extends StatelessWidget {
               counterText: '',
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(
-                      width: 2.0, color: Color.fromRGBO(106, 153, 78, 1))),
+                  borderSide:  BorderSide(
+                      width: 2.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(
-                      width: 3.0, color: Color.fromRGBO(167, 201, 87, 1))),
+                  borderSide:  BorderSide(
+                      width: 3.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
               labelText: 'Введите ваш рост',
             ),
           ),
@@ -48,8 +49,8 @@ class SettingsScreenWidget extends StatelessWidget {
               counterText: '',
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(
-                      width: 2.0, color: Color.fromRGBO(106, 153, 78, 1))),
+                  borderSide:  BorderSide(
+                      width: 2.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                   borderSide: const BorderSide(
@@ -69,12 +70,12 @@ class SettingsScreenWidget extends StatelessWidget {
               counterText: '',
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(
-                      width: 2.0, color: Color.fromRGBO(106, 153, 78, 1))),
+                  borderSide:  BorderSide(
+                      width: 2.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(
-                      width: 3.0, color: Color.fromRGBO(167, 201, 87, 1))),
+                  borderSide:  BorderSide(
+                      width: 3.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
               labelText: 'Введите ваш возраст',
             ),
           ),

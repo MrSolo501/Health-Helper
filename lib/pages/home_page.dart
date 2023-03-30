@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/settings.dart';
 import 'package:health_helper/widgets/homePageWidgets/tasksListWidget.dart';
 import 'package:health_helper/widgets/homePageScreenWidgets.dart';
@@ -31,9 +32,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
-        title: const Text("Health Helper",
+        automaticallyImplyLeading: false,
+        title:  Text("Health Helper",
             style: TextStyle(
-                fontSize: 25, color: Color.fromRGBO(255, 255, 255, 1)),
+                fontSize: 25.h, color: Color.fromRGBO(255, 255, 255, 1)),
             textDirection: TextDirection.ltr),
         backgroundColor: Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,
