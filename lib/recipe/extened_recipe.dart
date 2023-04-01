@@ -32,13 +32,6 @@ class DescriptionRecipe extends StatelessWidget {
                   image: AssetImage(image),
                   fit: BoxFit.cover)),
         ),
-        Center(child:Text(
-          title,style:TextStyle(color:Colors.black,fontSize: 18)
-        )),
-        SizedBox(height: 12.h),
-        Text('Ингридиенты'
-            ,style:TextStyle(color:Colors.black,fontSize: 18)
-        ),
         Center(
             child: Text(title,
                 style: TextStyle(
@@ -48,7 +41,7 @@ class DescriptionRecipe extends StatelessWidget {
         SizedBox(height: 12),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Text('Ингридиенты:',
+            child: Text('Ингредиенты:',
                 style: TextStyle(color: Colors.black, fontSize: 18))),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
