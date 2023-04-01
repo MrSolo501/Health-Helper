@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
-=======
 import 'package:health_helper/recipe/Recipes.dart';
->>>>>>> Stashed changes
 
 import 'extened_recipe.dart';
 
@@ -249,7 +247,7 @@ class Recipesdinner extends StatelessWidget {
     }
     return ListView.builder(
         itemCount: 5,
-        itemExtent: 180,
+        itemExtent: 180.h,
         itemBuilder: (BuildContext context, int index) {
           final dishes = _dishes[index];
           final Recipes=_recipes[index];
@@ -267,16 +265,8 @@ class Recipesdinner extends StatelessWidget {
               },
               child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
-<<<<<<< Updated upstream
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width,
-                  height: 180.h,
-=======
                   width: MediaQuery.of(context).size.width,
-                  height: 180,
->>>>>>> Stashed changes
+                  height: 180.h,
                   decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(12),

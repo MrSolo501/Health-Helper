@@ -13,66 +13,9 @@ class EdaScreenWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => breakfastScreen()));
-            },
-            child: Container(
-              margin: const EdgeInsets.all(10.0),
-              height: 200.h,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.lightGreen),
-              child: Center(
-                  child: Text(
-                'Завтрак',
-                style: TextStyle(fontSize: 40.h,color: Colors.white),
-              )),
-            )),
-        GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => lunchScreen()));
-            },
-            child: Container(
-          margin: const EdgeInsets.all(10.0),
-          height: 200.h,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.lightGreen),
-          child: Center(
-              child: Text(
-            'Обед',
-            style: TextStyle(fontSize: 40.h,color:Colors.white),
-          )),
-        )),
-        GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => dinnerScreen()));
-            },
-            child: Container(
-          margin: const EdgeInsets.all(10.0),
-          height: 200.h,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.lightGreen),
-          child: Center(
-              child: Text(
-            'Ужин',
-            style: TextStyle(fontSize: 40.h,color:Colors.white),
-          )),
-        )),
-      ],
-=======
     return ListView.builder(
         itemCount: 3,
-        itemExtent: 200,
+        itemExtent: 200.h,
         itemBuilder: (BuildContext context, int index) {
           final _names = names[index];
           final _scr = scr[index];
@@ -83,7 +26,7 @@ class EdaScreenWidget extends StatelessWidget {
               },
               child: Container(
                 margin: const EdgeInsets.all(10.0),
-                height: 200,
+                height: 200.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.lightGreen),
@@ -95,7 +38,6 @@ class EdaScreenWidget extends StatelessWidget {
               )
           );
         }
->>>>>>> Stashed changes
     );
   }
 }

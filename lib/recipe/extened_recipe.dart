@@ -20,11 +20,7 @@ class DescriptionRecipe extends StatelessWidget {
     return ListView(
       children: [
         Container(
-<<<<<<< Updated upstream
-          margin: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
-=======
           margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
->>>>>>> Stashed changes
           width: MediaQuery.of(context).size.width,
           height: 180.h,
           decoration: BoxDecoration(
@@ -36,7 +32,6 @@ class DescriptionRecipe extends StatelessWidget {
                   image: AssetImage(image),
                   fit: BoxFit.cover)),
         ),
-<<<<<<< Updated upstream
         Center(child:Text(
           title,style:TextStyle(color:Colors.black,fontSize: 18)
         )),
@@ -44,10 +39,6 @@ class DescriptionRecipe extends StatelessWidget {
         Text('Ингридиенты'
             ,style:TextStyle(color:Colors.black,fontSize: 18)
         ),
-        Text('')
-
-
-=======
         Center(
             child: Text(title,
                 style: TextStyle(
@@ -80,7 +71,6 @@ class DescriptionRecipe extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
                 Stepscooking))
->>>>>>> Stashed changes
       ],
     );
   }
