@@ -108,6 +108,11 @@ flutter:
     - assets/images/обед3(low).jpg
     - assets/images/обед4(low).jpg
     - assets/images/обед5(low).jpg
+    - assets/images/ужин1(low).jpg
+    - assets/images/ужин2(low).jpg
+    - assets/images/ужин3(low).jpg
+    - assets/images/ужин4(low).jpg
+    - assets/images/ужин5(low).jpg
     - assets/icons/
 
 #   To add assets to your application, add an assets section, like this:
