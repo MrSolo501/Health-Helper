@@ -98,8 +98,7 @@ class SettingsScreenWidget extends StatelessWidget {
               'Ваш Индекс Массы Тела:',
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold),
+                  fontSize: 25),
             )),
             Center(
                 child: Text(
@@ -110,8 +109,7 @@ class SettingsScreenWidget extends StatelessWidget {
                   .toString(),
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 23,
-                  fontWeight: FontWeight.bold),
+                  fontSize: 23),
             ))
           ]),
         )
