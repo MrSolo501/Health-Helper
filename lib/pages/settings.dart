@@ -1,16 +1,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import 'login_screen.dart';
 
 class SettingsScreenWidget extends StatelessWidget {
-  const SettingsScreenWidget({Key? key}) : super(key: key);
-
+   SettingsScreenWidget({Key? key}) : super(key: key);
+  
   void _onChanged(String text) {
     if (kDebugMode) {
       print('_onChanged: $text');
     }
   }
-
+  final MyController myController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +24,7 @@ class SettingsScreenWidget extends StatelessWidget {
           child: TextFormField(
             onChanged: _onChanged,
             maxLength: 3,
-            initialValue: '176',
+            initialValue: myController.heightController.text,
             readOnly: true,
             style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
             decoration: InputDecoration(
@@ -42,7 +45,7 @@ class SettingsScreenWidget extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: TextFormField(
             maxLength: 3,
-            initialValue: '68',
+            initialValue: myController.weightController.text,
             readOnly: true,
             style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
             decoration: InputDecoration(
@@ -63,7 +66,7 @@ class SettingsScreenWidget extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
           child: TextFormField(
             maxLength: 2,
-            initialValue: '19',
+            initialValue: myController.ageController.text,
             readOnly: true,
             style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
             decoration: InputDecoration(

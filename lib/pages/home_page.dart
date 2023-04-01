@@ -14,9 +14,9 @@ class HomePageScreen extends StatefulWidget {
 
 class _HomePageScreenState extends State<HomePageScreen> {
   int _selectedScreen = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    TaskWidget(),
-    EdaScreenWidget(),
+  static  final List<Widget> _widgetOptions = <Widget>[
+    const TaskWidget(),
+    const EdaScreenWidget(),
     SettingsScreenWidget(),
   ];
 
@@ -42,10 +42,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
       ),
       body: IndexedStack(
         index: _selectedScreen,
-        children: const [
+        children:  [
           //TaskWidget(),
-          HomePageScreenWidgets(),
-          EdaScreenWidget(),
+          const HomePageScreenWidgets(),
+          const EdaScreenWidget(),
           SettingsScreenWidget(),
         ],
       ),

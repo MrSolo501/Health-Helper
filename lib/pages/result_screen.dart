@@ -9,11 +9,13 @@ class BmiResultScreen extends StatelessWidget {
   var height;
   var age;
 
-  BmiResultScreen({required this.weight, required this.height, required this.age});
+  BmiResultScreen(
+      {required this.weight, required this.height, required this.age});
 
   @override
   Widget build(BuildContext context) {
     double bmiResult = BMICalculator.calculateBMI(weight, height, age);
+    
     String getResult() {
       if (bmiResult >= 25) {
         return 'Избыточная масса тела';
@@ -23,6 +25,7 @@ class BmiResultScreen extends StatelessWidget {
         return 'Недостаточная масса тела';
       }
     }
+
     return Scaffold(
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
@@ -69,17 +72,19 @@ class BmiResultScreen extends StatelessWidget {
               style: TextButton.styleFrom(
                   foregroundColor: Colors.black87,
                   backgroundColor: Color.fromRGBO(106, 153, 78, 1),
-                  padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 100),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 20.0, horizontal: 100),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
-                  )
-              ),
-              child:  Text('Приступим',
+                  )),
+              child: Text(
+                'Приступим',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 16.0.h,
-                ),),
+                ),
+              ),
             ),
           ],
         ),

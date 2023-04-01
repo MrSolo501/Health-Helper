@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/result_screen.dart';
 import 'home_page.dart';
+import 'package:get/get.dart';
+
+
+
+class MyController extends GetxController {
+  final weightController = TextEditingController();
+  final heightController = TextEditingController();
+ final ageController = TextEditingController();
+}
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -10,24 +19,22 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _weightController = TextEditingController();
-  final _heightController = TextEditingController();
-  final _ageController = TextEditingController();
-
+   final MyController myController = Get.put(MyController());
   @override
   void dispose() {
-    _weightController.dispose();
-    _heightController.dispose();
-    _ageController.dispose();
+    myController.weightController.dispose();
+    myController.heightController.dispose();
+    myController.ageController.dispose();
     super.dispose();
   }
   
 
   void _login() {
+    //var bmi = BmiResultScreen(weight:_weightController, height:_heightController, age:_ageController);
     if (_formKey.currentState!.validate()) {
-      double weight = double.parse(_weightController.text);
-      double height = double.parse(_heightController.text);
-      int age = int.parse(_ageController.text);
+      double weight = double.parse(myController.weightController.text);
+      double height = double.parse(myController.heightController.text);
+      int age = int.parse(myController.ageController.text);
 
       Navigator.of(context).push(
         MaterialPageRoute(
@@ -40,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
 
               TextFormField(
-                controller: _weightController,
+                controller: myController.weightController,
                 maxLength: 3,
                 style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
                 decoration: const InputDecoration(
@@ -82,10 +89,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 16.h),
               TextFormField(
-                controller: _heightController,
+                controller: myController.heightController,
                 maxLength: 3,
                 style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Color.fromRGBO(56, 102, 65, 1)),
                   ),
@@ -100,9 +107,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               TextFormField(
-                controller: _ageController,
+                controller: myController.ageController,
                 maxLength: 3,
                 style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
                 decoration: InputDecoration(
@@ -120,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 30.h),
               TextButton(
                 onPressed: _login,
                 style: TextButton.styleFrom(
