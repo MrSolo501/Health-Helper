@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
-
+import 'package:get/get.dart';
+import '../pages/login_screen.dart';
+import '../widgets/bmi_calculator.dart';
 import 'Recipes.dart';
-
-
-class you{
-  static const int IWB=27;
-}
 
 class Dishes{
   final String cooktime;
@@ -21,6 +18,8 @@ class Dishes{
 
 
 class Recipeslunch extends StatelessWidget {
+
+  final MyController myController = Get.find();
 
   List<Dishes> _dishes=[Dishes( cooktime: '1 час 30 мин',
     title: 'Уха, мясное блюдо из запечённой птицы с гарниром из овощей',
@@ -87,7 +86,7 @@ class Recipeslunch extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    if(you.IWB>=25){
+    if(BMICalculator.calculateBMI(double.parse(myController.weightController.text), double.parse(myController.heightController.text), int.parse(myController.ageController.text))>=25){
       _dishes.clear();
       _dishes.addAll([Dishes( cooktime: '20 мин',
         title: 'Овощной салат',
@@ -153,7 +152,7 @@ class Recipeslunch extends StatelessWidget {
           cooktime: '2 часа',
         ),
       ]);
-    }else if (you.IWB<18.6){
+    }else if (BMICalculator.calculateBMI(double.parse(myController.weightController.text), double.parse(myController.heightController.text), int.parse(myController.ageController.text))<18.6){
       _dishes.clear();
       _dishes.addAll([Dishes( cooktime: '1 час',
         title: 'Паста с говядиной в томатном соусе, фрукты, стакан молока',

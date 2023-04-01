@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
-
+import 'package:get/get.dart';
+import '../pages/login_screen.dart';
+import '../widgets/bmi_calculator.dart';
 import 'Recipes.dart';
-
-class you {
-  static const int IWB = 27;
-}
 
 class Dishes {
   final String cooktime;
@@ -17,6 +15,9 @@ class Dishes {
 }
 
 class Recipesbreakfast extends StatelessWidget {
+
+  final MyController myController = Get.find();
+
   final _dishes = [
     Dishes(
       cooktime: '7 мин',
@@ -94,7 +95,7 @@ class Recipesbreakfast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (you.IWB >= 25) {
+    if (BMICalculator.calculateBMI(double.parse(myController.weightController.text), double.parse(myController.heightController.text), int.parse(myController.ageController.text)) >= 25) {
       _dishes.clear();
       _dishes.addAll([
         Dishes(
@@ -171,7 +172,7 @@ class Recipesbreakfast extends StatelessWidget {
           cooktime: '20 мин',
         ),
       ]);
-    } else if (you.IWB < 18.6) {
+    } else if (BMICalculator.calculateBMI(double.parse(myController.weightController.text), double.parse(myController.heightController.text), int.parse(myController.ageController.text)) < 18.6) {
       _dishes.clear();
       _dishes.addAll([
         Dishes(
