@@ -6,3 +6,5 @@ class BMICalculator {
     return double.parse(bmi.toStringAsFixed(1));
   }
 }
+
+

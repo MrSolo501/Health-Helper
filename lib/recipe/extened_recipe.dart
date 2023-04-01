@@ -2,36 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DescriptionRecipe extends StatelessWidget {
-  final String urlimage;
+  final String image;
   final String title;
   final String ingridients;
-  final String titlestepscooking;
-  final List<String> Stepscooking;
+  final String Stepscooking;
+  final String cooktime;
 
   DescriptionRecipe(
-      {required this.urlimage,
+      {required this.image,
       required this.title,
       required this.ingridients,
-      required this.titlestepscooking,
-      required this.Stepscooking});
+      required this.Stepscooking,
+      required this.cooktime});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         Container(
+<<<<<<< Updated upstream
           margin: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
+=======
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+>>>>>>> Stashed changes
           width: MediaQuery.of(context).size.width,
           height: 180.h,
           decoration: BoxDecoration(
               color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
               image: DecorationImage(
                   colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.35), BlendMode.multiply),
-                  image: NetworkImage(urlimage),
+                      Colors.black.withOpacity(0.05), BlendMode.multiply),
+                  image: AssetImage(image),
                   fit: BoxFit.cover)),
         ),
+<<<<<<< Updated upstream
         Center(child:Text(
           title,style:TextStyle(color:Colors.black,fontSize: 18)
         )),
@@ -42,6 +47,40 @@ class DescriptionRecipe extends StatelessWidget {
         Text('')
 
 
+=======
+        Center(
+            child: Text(title,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold))),
+        SizedBox(height: 12),
+        Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Text('Ингридиенты:',
+                style: TextStyle(color: Colors.black, fontSize: 18))),
+        Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Text(ingridients)),
+        Row(children: [
+          Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Text('Время приготовления:',
+                  style: TextStyle(color: Colors.black, fontSize: 18))),
+          Text(
+            cooktime,
+            style: TextStyle(fontSize: 18),
+          )
+        ]),
+        Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Text('Шаги приготовления:',
+                style: TextStyle(color: Colors.black, fontSize: 18))),
+        Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+                Stepscooking))
+>>>>>>> Stashed changes
       ],
     );
   }
