@@ -19,8 +19,8 @@ class HomePageScreenWidgets extends StatefulWidget {
 class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
+    return ListView(
+      children:[ Container(
         height: MediaQuery.of(context).size.height*2.h,
         child: Stack(
           children: [
@@ -34,6 +34,7 @@ class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
           ],
         ),
       ),
+    ]
     );
   }
 }
