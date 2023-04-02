@@ -38,14 +38,16 @@ class DescriptionRecipe extends StatelessWidget {
                     color: Colors.black,
                     fontSize: 22.sp,
                     fontWeight: FontWeight.bold))),
-        SizedBox(height: 12.sp),
+        SizedBox(height: 15.sp),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.h),
             child: Text('Ингредиенты:',
                 style: TextStyle(color: Colors.black, fontSize: 18.sp))),
+        SizedBox(height: 7.sp),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.h),
             child: Text(ingridients)),
+        SizedBox(height: 13.sp),
         Row(children: [
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.h),
@@ -56,14 +58,15 @@ class DescriptionRecipe extends StatelessWidget {
             style: TextStyle(fontSize: 18.sp),
           )
         ]),
+        SizedBox(height: 13.sp),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.h),
             child: Text('Шаги приготовления:',
                 style: TextStyle(color: Colors.black, fontSize: 18.sp))),
+        SizedBox(height: 5.sp),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.h),
-            child: Text(
-                Stepscooking))
+            child: Text(Stepscooking))
       ],
     );
   }
