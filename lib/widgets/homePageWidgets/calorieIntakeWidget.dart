@@ -30,14 +30,14 @@ class CalorieIntakeWidget extends StatelessWidget {
       }
     }
     return Positioned(
-      top: MediaQuery.of(context).size.height / 0.82.h,
+      top: MediaQuery.of(context).size.height / 0.7.h,
       left: MediaQuery.of(context).size.width / 12.w,
       
       child: UnconstrainedBox(
         child: Container(
           
-          width: 150.w,
-          height: 200.h,
+          width:MediaQuery.of(context).size.width / 2.3.w,
+          height:MediaQuery.of(context).size.height/3.8.h,
           padding:  EdgeInsets.all(16.sp),
           decoration: BoxDecoration(
             border: Border.all(

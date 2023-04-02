@@ -13,12 +13,12 @@ class ReminerOfSleepWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: MediaQuery.of(context).size.height / 0.66.h,
+      top: MediaQuery.of(context).size.height / 0.58.h,
       left: MediaQuery.of(context).size.width / 12.w,
       child: Container(
        
-        height: 140.h,
-        width: 350.w,
+        height: MediaQuery.of(context).size.height / 5.h,
+        width: MediaQuery.of(context).size.width/1.w,
         decoration: BoxDecoration(
           
           borderRadius: BorderRadius.circular(20.0.sp),

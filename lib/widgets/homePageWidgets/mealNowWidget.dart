@@ -27,12 +27,12 @@ class MealNowWidget extends StatelessWidget {
     }
 
     return Positioned(
-      top: MediaQuery.of(context).size.height / 0.97.h,
+      top: MediaQuery.of(context).size.height / 0.85.h,
       left: MediaQuery.of(context).size.width / 12.w,
       child: UnconstrainedBox(
         child: Container(
-          width: 320.w,
-          height: 130.h,
+          width: MediaQuery.of(context).size.width /1.08.w,
+          height: MediaQuery.of(context).size.height/5.h,
           padding:  EdgeInsets.all(16.sp),
           decoration: BoxDecoration(
             border: Border.all(

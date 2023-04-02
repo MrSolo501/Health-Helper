@@ -27,8 +27,8 @@ class _TaskWidgetState extends State<TaskWidget> {
             borderRadius: BorderRadius.circular(20.0.sp),
             color: Colors.white),
         padding:  EdgeInsets.all(13.sp),
-        width: 320.w,
-        height: 580.h,
+        width: MediaQuery.of(context).size.width-60.w,
+        height: MediaQuery.of(context).size.height/1.15.h,
         child: Column(
           children: [
             
@@ -101,7 +101,7 @@ class ToDoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 13),
+      margin: EdgeInsets.only(bottom: 13.h),
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green,
@@ -131,7 +131,7 @@ class ToDoItem extends StatelessWidget {
         ),
         trailing: Container(
             
-            width: 70.w,
+            width: MediaQuery.of(context).size.width/5.w,
             child: Text(
               todo.time!,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),

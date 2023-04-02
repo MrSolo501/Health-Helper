@@ -17,14 +17,14 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: MediaQuery.of(context).size.height / 1.22.h,
+      top: MediaQuery.of(context).size.height / 1.06.h,
       left: MediaQuery.of(context).size.width / 12.w,
       child: UnconstrainedBox(
         child: Container(
           padding:
                EdgeInsets.symmetric(vertical: 13.h, horizontal: 12.w),
-          width: 320.w,
-          height: 140.h,
+          width:  MediaQuery.of(context).size.width - 60.w,
+          height:  MediaQuery.of(context).size.height /5.h,
           decoration: BoxDecoration(
              border: Border.all(
                     color:Colors.green,
@@ -67,7 +67,7 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
                 },
                 style: ButtonStyle(
                   fixedSize:
-                      MaterialStateProperty.all( Size(240.w, 49.h)),
+                      MaterialStateProperty.all( Size(MediaQuery.of(context).size.width/1.w, MediaQuery.of(context).size.height /16.h)),
                   backgroundColor: MaterialStateProperty.all(
                       Colors.lightBlue.shade100),
                 ),
