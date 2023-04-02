@@ -84,6 +84,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   if (value == null || value.isEmpty) {
                     return 'Введите ваш вес';
                   }
+                  else if(double.parse(value!)>500){
+                    return 'Некорректный ввод данных';
+                  }
+                  else if(double.parse(value)<=0){
+                  return 'Некорректный ввод данных';
+                  }
                   return null;
                 },
               ),
@@ -104,6 +110,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   if (value == null || value.isEmpty) {
                     return 'Введите ваш рост';
                   }
+                  else if(double.parse(value!)>500){
+                    return 'Некорректный ввод данных';
+                  }
+                  else if(double.parse(value)<=0){
+                    return 'Некорректный ввод данных';
+                  }
                   return null;
                 },
               ),
@@ -123,6 +135,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Введите ваш возраст';
+                  }
+                  else if(double.parse(value!)>500){
+                    return 'Некорректный ввод данных';
+                  }
+                  else if(double.parse(value)<=0){
+                    return 'Некорректный ввод данных';
                   }
                   return null;
                 },
