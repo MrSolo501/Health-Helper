@@ -40,7 +40,8 @@ class SettingsScreenWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   borderSide: BorderSide(
                       width: 3.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
-              labelText: 'Введите ваш рост',
+              labelText: 'Ваш текущий рост:',
+              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp),
             ),
           ),
         ),
@@ -61,7 +62,8 @@ class SettingsScreenWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   borderSide: const BorderSide(
                       width: 3.0, color: Color.fromRGBO(167, 201, 87, 1))),
-              labelText: 'Введите ваш вес',
+              labelText: 'Ваш текущий вес:',
+              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp),
             ),
           ),
         ),
@@ -82,7 +84,8 @@ class SettingsScreenWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   borderSide: BorderSide(
                       width: 3.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
-              labelText: 'Введите ваш возраст',
+              labelText: 'Ваш текущий возраст:',
+              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp),
             ),
           ),
         ),

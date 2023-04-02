@@ -15,7 +15,7 @@ class EdaScreenWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         itemCount: 3,
-        itemExtent: 200.h,
+        itemExtent: 220.h,
         itemBuilder: (BuildContext context, int index) {
           final _names = names[index];
           final _scr = scr[index];
@@ -25,15 +25,15 @@ class EdaScreenWidget extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => _scr));
               },
               child: Container(
-                margin: const EdgeInsets.all(10.0),
+                margin:  EdgeInsets.all(10.0.sp),
                 height: 200.h,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.sp),
                     color: Colors.lightGreen),
                 child: Center(
                     child: Text(
                       _names,
-                      style: TextStyle(fontSize: 40, color: Colors.white),
+                      style: TextStyle(fontSize: 40.sp, color: Colors.white),
                     )),
               )
           );

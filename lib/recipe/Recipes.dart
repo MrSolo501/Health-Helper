@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
 
 class recipes extends StatelessWidget {
@@ -19,9 +20,9 @@ class recipes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Text(
+            title:  Text(
               'Рецепт к блюду',
-              style: TextStyle(fontSize: 25, color: Colors.white),
+              style: TextStyle(fontSize: 25.sp, color: Colors.white),
             ),
             centerTitle: true,
             backgroundColor: Color.fromRGBO(106, 153, 78, 1)),

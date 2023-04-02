@@ -35,7 +35,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         automaticallyImplyLeading: false,
         title:  Text("Health Helper",
             style: TextStyle(
-                fontSize: 25.h, color: Color.fromRGBO(255, 255, 255, 1)),
+                fontSize: 25.sp, color: Color.fromRGBO(255, 255, 255, 1)),
             textDirection: TextDirection.ltr),
         backgroundColor: Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,

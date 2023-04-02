@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -15,18 +16,12 @@ class WelcomeScreen extends StatelessWidget {
 
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       body: Container(
-        decoration: BoxDecoration(
+       /* decoration: const BoxDecoration(
 
         image: DecorationImage(
         image: NetworkImage('https://github.com/hritikutekar/Diet-Planner-UI/blob/master/assets/images/background.jpg'),
-    fit: BoxFit.fill),),
+    fit: BoxFit.fill),),*/
 
-        // decoration: BoxDecoration(
-        //   image: DecorationImage(
-        //     image: AssetImage('assets/images/HH.png'),
-        //     fit: BoxFit.cover,
-        //   ),
-        // ),
 
         child: SafeArea(
           child: Padding(
@@ -45,23 +40,23 @@ class WelcomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 50.0),
-                    Text(
+                    SizedBox(height: 50.0.h),
+                     Text(
                       'Организуйте свой образ жизни',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color.fromRGBO(56, 102, 65, 1),
-                        fontSize: 24.0,
+                        fontSize: 24.0.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 12.0),
+                    SizedBox(height: 12.0.h),
                     Text(
                       'Следи за своим рационом питания, занимайся спортом, веди здоровый образ жизни быстро и просто с нашим приложениемю',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color.fromRGBO(56, 102, 65, 1),
-                        fontSize: 15.0,
+                        fontSize: 15.0.sp,
                         fontWeight: FontWeight.w300,
                       ),
                     )
@@ -85,9 +80,9 @@ class WelcomeScreen extends StatelessWidget {
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.black87,
                       backgroundColor: Color.fromRGBO(106, 153, 78, 1),
-                      padding: EdgeInsets.symmetric(vertical: 25.0),
+                      padding: EdgeInsets.symmetric(vertical: 25.0.h),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                        borderRadius: BorderRadius.circular(20.0.sp),
                       ),
                     ),
 
@@ -104,7 +99,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
+                        fontSize: 16.0.sp,
                       ),
                     ),
                   ),

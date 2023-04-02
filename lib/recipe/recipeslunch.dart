@@ -237,7 +237,7 @@ class Recipeslunch extends StatelessWidget {
                         )));
               },
               child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
+                  margin: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
                   width: MediaQuery
                       .of(context)
                       .size
@@ -245,7 +245,7 @@ class Recipeslunch extends StatelessWidget {
                   height: 180.h,
                   decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(12.sp),
                       image: DecorationImage(
                           colorFilter: ColorFilter.mode(
                               Colors.black.withOpacity(0.35),
@@ -255,36 +255,36 @@ class Recipeslunch extends StatelessWidget {
                   child: Stack(
                     children: [
                       Align(
+                        alignment: Alignment.center,
                         child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 0.5),
+                          padding: EdgeInsets.symmetric(horizontal: 0.5.w),
                           child: Text(
                             dishes.title,
-                            style: TextStyle(fontSize: 23.h, color: Colors.white),
+                            style: TextStyle(fontSize: 23.sp, color: Colors.white),
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        alignment: Alignment.center,
                       ),
                       Align(
                         child: Container(
-                          padding: EdgeInsets.all(5),
-                          margin: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(5.sp),
+                          margin: EdgeInsets.all(10.sp),
                           decoration: BoxDecoration(
                             color: Colors.black.withOpacity(0.05),
-                            borderRadius: BorderRadius.circular(14),
+                            borderRadius: BorderRadius.circular(14.w),
                           ),
+                          alignment: Alignment.bottomRight,
                           child: Row(
                             children: [
-                              Icon(Icons.timer, color: Colors.white, size: 18),
+                              Icon(Icons.timer, color: Colors.white, size: 18.sp),
                               Text(
                                 dishes.cooktime,
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                               )
                             ],
                           ),
-                          alignment: Alignment.bottomRight,
                         ),
                       )
                     ],

@@ -14,41 +14,43 @@ class _TaskWidgetState extends State<TaskWidget> {
    final todosList = ToDo.todoList();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.green,
-            width: 1.w,
-          ),
-          borderRadius: BorderRadius.circular(20.0),
-          color: Colors.white),
-      padding:  EdgeInsets.symmetric(
-        horizontal: 15.w,
-        vertical: 15.h,
-      ),
-      width: 320.w,
-      height: 560.h,
-      child: Column(
-        children: [
-          Container(
-            margin:  EdgeInsets.only(
-              top: 10.h,
-              bottom: 10.h,
+    return Positioned(
+      
+      top: MediaQuery.of(context).size.height / 29.h,
+      left: MediaQuery.of(context).size.width / 12.w,
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.green,
+              width: 1.w,
             ),
-            child:  Text(
-              'Расписание',
-              style: TextStyle(
-                fontSize: 30.h,
-                fontWeight: FontWeight.w500,
+            borderRadius: BorderRadius.circular(20.0.sp),
+            color: Colors.white),
+        padding:  EdgeInsets.all(13.sp),
+        width: 320.w,
+        height: 580.h,
+        child: Column(
+          children: [
+            
+            Container(
+              
+              child:  Text(
+                'Расписание',
+                style: TextStyle(
+                  fontSize: 30.sp,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
+              
             ),
-          ),
-          for (ToDo todoo in todosList)
-            ToDoItem(
-              todo: todoo,
-              onToDoChanged: _handleToDoChange,
-            ),
-        ],
+            SizedBox(height: 10.h,),
+            for (ToDo todoo in todosList)
+              ToDoItem(
+                todo: todoo,
+                onToDoChanged: _handleToDoChange,
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -75,12 +77,13 @@ class ToDo {
 
   static List<ToDo> todoList() {
     return [
-      ToDo(id: '01', todoText: 'Зарядка', time: '8:00-9:00'),
-      ToDo(id: '02', todoText: 'Завтрак', time: '9:00-10:30'),
-      ToDo(id: '03', todoText: 'Обед', time: '12:00-14:00'),
-      ToDo(id: '04', todoText: 'Ужин', time: '16:30-17:30'),
-      ToDo(id: '05', todoText: 'Тренировка', time: '18:00-20:00'),
-      ToDo(id: '06', todoText: 'Сон', time: '23:00'),
+      ToDo(id: '01', todoText: 'Подъём', time: '07:00'),
+      ToDo(id: '02', todoText: 'Зарядка', time: '07:20'),
+      ToDo(id: '03', todoText: 'Завтрак', time: '07:40'),
+      ToDo(id: '04', todoText: 'Обед', time: '13:30'),
+      ToDo(id: '05', todoText: 'Ужин', time: '19:00'),
+      ToDo(id: '06', todoText: 'Тренировка', time: '20:00'),
+      ToDo(id: '07', todoText: 'Сон', time: '23:00'),
     ];
   }
 }
@@ -98,13 +101,13 @@ class ToDoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 14),
+      margin: EdgeInsets.only(bottom: 13),
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green,
           width: 1.w,
         ),
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(20.0.sp),
         color: Colors.white,
       ),
       child: ListTile(
@@ -112,7 +115,7 @@ class ToDoItem extends StatelessWidget {
           onToDoChanged(todo);
         },
         contentPadding:
-             EdgeInsets.symmetric(vertical: 3.0.h, horizontal: 16.0.w),
+             EdgeInsets.symmetric(vertical: 3.0.h, horizontal: 14.0.w),
        
         leading: Icon(
           todo.isDone ? Icons.check_box : Icons.check_box_outline_blank,
@@ -121,17 +124,17 @@ class ToDoItem extends StatelessWidget {
         title: Text(
           todo.todoText!,
           style: TextStyle(
-            fontSize: 16.h,
+            fontSize: 16.sp,
             color: Colors.black,
             decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
         ),
         trailing: Container(
-            height: 14.h,
-            width: 80.w,
+            
+            width: 70.w,
             child: Text(
               todo.time!,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.h),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
             )),
       ),
     );

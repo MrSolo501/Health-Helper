@@ -36,32 +36,32 @@ class DescriptionRecipe extends StatelessWidget {
             child: Text(title,
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 22,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold))),
-        SizedBox(height: 12),
+        SizedBox(height: 12.sp),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: 10.h),
             child: Text('Ингредиенты:',
-                style: TextStyle(color: Colors.black, fontSize: 18))),
+                style: TextStyle(color: Colors.black, fontSize: 18.sp))),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: 10.h),
             child: Text(ingridients)),
         Row(children: [
           Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10.h),
               child: Text('Время приготовления:',
-                  style: TextStyle(color: Colors.black, fontSize: 18))),
+                  style: TextStyle(color: Colors.black, fontSize: 18.sp))),
           Text(
             cooktime,
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 18.sp),
           )
         ]),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: 10.h),
             child: Text('Шаги приготовления:',
-                style: TextStyle(color: Colors.black, fontSize: 18))),
+                style: TextStyle(color: Colors.black, fontSize: 18.sp))),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: 10.h),
             child: Text(
                 Stepscooking))
       ],

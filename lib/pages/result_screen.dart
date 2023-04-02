@@ -30,9 +30,9 @@ class BmiResultScreen extends StatelessWidget {
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text("Health Helper",
+        title:  Text("Health Helper",
             style: TextStyle(
-                fontSize: 25, color: Color.fromRGBO(255, 255, 255, 1)),
+                fontSize: 25.sp, color: Color.fromRGBO(255, 255, 255, 1)),
             textDirection: TextDirection.ltr),
         backgroundColor: Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,
@@ -45,7 +45,7 @@ class BmiResultScreen extends StatelessWidget {
               getResult(),
               style: TextStyle(
                 color: Color.fromRGBO(56, 102, 65, 1),
-                fontSize: 22.0.h,
+                fontSize: 22.0.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -66,7 +66,7 @@ class BmiResultScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePageScreen()),
+                  MaterialPageRoute(builder: (context) => const HomePageScreen()),
                 );
               },
               style: TextButton.styleFrom(
@@ -82,7 +82,7 @@ class BmiResultScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.0.h,
+                  fontSize: 16.0.sp,
                 ),
               ),
             ),
