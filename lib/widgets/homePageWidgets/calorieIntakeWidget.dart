@@ -36,7 +36,7 @@ class CalorieIntakeWidget extends StatelessWidget {
       child: UnconstrainedBox(
         child: Container(
           
-          width:MediaQuery.of(context).size.width / 2.3.w,
+          width:MediaQuery.of(context).size.width / 2.4.w,
           height:MediaQuery.of(context).size.height/3.8.h,
           padding:  EdgeInsets.all(16.sp),
           decoration: BoxDecoration(

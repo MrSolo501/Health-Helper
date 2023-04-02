@@ -9,9 +9,9 @@ class ReminerOfWaterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       top: MediaQuery.of(context).size.height / 0.7.h,
-      left: MediaQuery.of(context).size.width / 1.7.w,
+      left: MediaQuery.of(context).size.width / 1.8.w,
       child: Container(
-        width: MediaQuery.of(context).size.width / 2.3.w,
+        width: MediaQuery.of(context).size.width / 2.4.w,
         height: MediaQuery.of(context).size.height/3.8.h,
         padding:  EdgeInsets.all(16.sp),
         decoration: BoxDecoration(

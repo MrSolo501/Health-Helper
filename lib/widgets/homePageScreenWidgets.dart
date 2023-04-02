@@ -21,7 +21,7 @@ class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: MediaQuery.of(context).size.height*1.73.h,
+        height: MediaQuery.of(context).size.height*2.h,
         child: Stack(
           children: [
             const TaskWidget(),
