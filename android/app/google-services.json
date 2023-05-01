@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "467105409973",
+    "project_id": "health-helper-f47cd",
+    "storage_bucket": "health-helper-f47cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467105409973:android:68b0862c2d5eb3dc8d47fc",
+        "android_client_info": {
+          "package_name": "com.example.health_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467105409973-f3icq3e4rae1ggj595dnagk4buvum8b8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOfq3NAqvRfJOAl0CPZe8ujsmOxdlDDEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "467105409973-f3icq3e4rae1ggj595dnagk4buvum8b8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
