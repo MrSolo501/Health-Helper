@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
 import 'package:health_helper/recipe/Recipes.dart';
 import 'package:get/get.dart';
 import 'package:health_helper/widgets/bmi_calculator.dart';
+import 'package:sizer/sizer.dart';
 
 import '../pages/login_screen.dart';
 import 'extened_recipe.dart';
@@ -249,7 +248,7 @@ class Recipesdinner extends StatelessWidget {
     }
     return ListView.builder(
         itemCount: 5,
-        itemExtent: 180.h,
+        itemExtent: 30.h,
         itemBuilder: (BuildContext context, int index) {
           final dishes = _dishes[index];
           final Recipes=_recipes[index];

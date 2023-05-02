@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
+import 'package:sizer/sizer.dart';
 
 class recipes extends StatelessWidget {
   final String image;

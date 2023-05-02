@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/home_page.dart';
+import 'package:sizer/sizer.dart';
 
 
 class TaskWidget extends StatefulWidget {
@@ -14,43 +14,36 @@ class _TaskWidgetState extends State<TaskWidget> {
    final todosList = ToDo.todoList();
   @override
   Widget build(BuildContext context) {
-    return Positioned(
+    return Container(
+      width: 50.w,
+      height: 100.h,
+      decoration: BoxDecoration(
+        
+          border: Border.all(
+            color: Colors.green,
+            width: 0.5.w,
+          ),
+          borderRadius: BorderRadius.circular(20.0.sp),
+          color: Colors.white),
+      //padding:  EdgeInsets.all(13.sp),
       
-      top: MediaQuery.of(context).size.height / 29.h,
-      left: MediaQuery.of(context).size.width / 12.w,
-      child: Container(
-        decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.green,
-              width: 1.w,
+      child: Column(
+        children: [
+          
+          Text(
+            'Расписание',
+            style: TextStyle(
+              fontSize: 30.sp,
+              fontWeight: FontWeight.w500,
             ),
-            borderRadius: BorderRadius.circular(20.0.sp),
-            color: Colors.white),
-        padding:  EdgeInsets.all(13.sp),
-        width: MediaQuery.of(context).size.width-60.w,
-        height: MediaQuery.of(context).size.height/1.15.h,
-        child: Column(
-          children: [
-            
-            Container(
-              
-              child:  Text(
-                'Расписание',
-                style: TextStyle(
-                  fontSize: 30.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              
+          ),
+          SizedBox(height: 5.h,),
+          for (ToDo todoo in todosList)
+            ToDoItem(
+              todo: todoo,
+              onToDoChanged: _handleToDoChange,
             ),
-            SizedBox(height: 10.h,),
-            for (ToDo todoo in todosList)
-              ToDoItem(
-                todo: todoo,
-                onToDoChanged: _handleToDoChange,
-              ),
-          ],
-        ),
+        ],
       ),
     );
   }
@@ -101,41 +94,46 @@ class ToDoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 13.h),
+      
+      //margin: EdgeInsets.only(bottom: 13.h),
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green,
-          width: 1.w,
+          width: 0.5.w,
         ),
         borderRadius: BorderRadius.circular(20.0.sp),
         color: Colors.white,
       ),
-      child: ListTile(
-        onTap: () {
-          onToDoChanged(todo);
-        },
-        contentPadding:
-             EdgeInsets.symmetric(vertical: 3.0.h, horizontal: 14.0.w),
-       
-        leading: Icon(
-          todo.isDone ? Icons.check_box : Icons.check_box_outline_blank,
-          color: Colors.lightGreen,
-        ),
-        title: Text(
-          todo.todoText!,
-          style: TextStyle(
-            fontSize: 16.sp,
-            color: Colors.black,
-            decoration: todo.isDone ? TextDecoration.lineThrough : null,
+      child: SizedBox(
+        width: 80.w,
+        child: ListTile(
+          
+          onTap: () {
+            onToDoChanged(todo);
+          },
+          //contentPadding:
+               //EdgeInsets.symmetric(vertical: 3.0.h, horizontal: 14.0.w),
+         
+          leading: Icon(
+            todo.isDone ? Icons.check_box : Icons.check_box_outline_blank,
+            color: Colors.lightGreen,
           ),
+          title: Text(
+            todo.todoText!,
+            style: TextStyle(
+              fontSize: 16.sp,
+              color: Colors.black,
+              decoration: todo.isDone ? TextDecoration.lineThrough : null,
+            ),
+          ),
+          trailing: SizedBox(
+              
+              width: 30.w,
+              child: Text(
+                todo.time!,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+              )),
         ),
-        trailing: Container(
-            
-            width: MediaQuery.of(context).size.width/5.w,
-            child: Text(
-              todo.time!,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
-            )),
       ),
     );
   }

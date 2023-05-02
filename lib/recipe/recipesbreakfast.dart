@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 import '../pages/login_screen.dart';
 import '../widgets/bmi_calculator.dart';
 import 'Recipes.dart';
@@ -252,7 +252,7 @@ class Recipesbreakfast extends StatelessWidget {
     }
     return ListView.builder(
         itemCount: 5,
-        itemExtent: 180.h,
+        itemExtent: 30.h,
         itemBuilder: (BuildContext context, int index) {
           final dishes = _dishes[index];
           final Recipes=_recipes[index];
@@ -271,10 +271,10 @@ class Recipesbreakfast extends StatelessWidget {
               child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
                   width: MediaQuery.of(context).size.width,
-                  height: 180.h,
+                  
                   decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(12.sp),
                       image: DecorationImage(
                           colorFilter: ColorFilter.mode(
                               Colors.black.withOpacity(0.35),
@@ -284,17 +284,17 @@ class Recipesbreakfast extends StatelessWidget {
                   child: Stack(
                     children: [
                       Align(
+                        alignment: Alignment.center,
                         child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 0.5),
+                          padding: EdgeInsets.symmetric(horizontal: 0.5.w),
                           child: Text(
                             dishes.title,
-                            style: TextStyle(fontSize: 23.h, color: Colors.white),
+                            style: TextStyle(fontSize: 5.h, color: Colors.white),
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        alignment: Alignment.center,
                       ),
                       Align(
                         child: Container(

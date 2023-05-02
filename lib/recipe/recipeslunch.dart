@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/recipe/extened_recipe.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 import '../pages/login_screen.dart';
 import '../widgets/bmi_calculator.dart';
 import 'Recipes.dart';
@@ -220,7 +220,7 @@ class Recipeslunch extends StatelessWidget {
     }
     return ListView.builder(
         itemCount: 5,
-        itemExtent: 180.h,
+        itemExtent: 30.h,
         itemBuilder: (BuildContext context,int index) {
           final dishes=_dishes[index];
           final Recipes=_recipes[index];
@@ -237,7 +237,7 @@ class Recipeslunch extends StatelessWidget {
                         )));
               },
               child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
+                  margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
                   width: MediaQuery
                       .of(context)
                       .size

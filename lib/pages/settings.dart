@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:health_helper/widgets/bmi_calculator.dart';
+import 'package:sizer/sizer.dart';
 
 import 'login_screen.dart';
 
@@ -28,20 +28,21 @@ class SettingsScreenWidget extends StatelessWidget {
             onChanged: _onChanged,
             maxLength: 3,
             initialValue: myController.heightController.text,
-            readOnly: true,
+            //readOnly: true,
+            keyboardType: TextInputType.number,
             style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
             decoration: InputDecoration(
               counterText: '',
               enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.sp),
                   borderSide: BorderSide(
-                      width: 2.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
+                      width: 1.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.sp),
                   borderSide: BorderSide(
-                      width: 3.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
+                      width: 1.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
               labelText: 'Ваш текущий рост:',
-              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp),
+              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.sp),
             ),
           ),
         ),
@@ -49,21 +50,22 @@ class SettingsScreenWidget extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: TextFormField(
             maxLength: 3,
+            keyboardType: TextInputType.number,
             initialValue: myController.weightController.text,
-            readOnly: true,
+            //readOnly: true,
             style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
             decoration: InputDecoration(
               counterText: '',
               enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.sp),
                   borderSide: BorderSide(
-                      width: 2.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
+                      width: 1.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(
-                      width: 3.0, color: Color.fromRGBO(167, 201, 87, 1))),
+                  borderRadius: BorderRadius.circular(20.sp),
+                  borderSide:  BorderSide(
+                      width: 1.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
               labelText: 'Ваш текущий вес:',
-              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp),
+              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.sp),
             ),
           ),
         ),
@@ -71,51 +73,47 @@ class SettingsScreenWidget extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
           child: TextFormField(
             maxLength: 2,
+            keyboardType: TextInputType.number,
             initialValue: myController.ageController.text,
-            readOnly: true,
+            //readOnly: true,
             style: const TextStyle(color: Color.fromRGBO(56, 102, 65, 1)),
             decoration: InputDecoration(
               counterText: '',
               enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.sp),
                   borderSide: BorderSide(
-                      width: 2.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
+                      width: 1.0.w, color: Color.fromRGBO(106, 153, 78, 1))),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.sp),
                   borderSide: BorderSide(
-                      width: 3.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
+                      width: 1.0.w, color: Color.fromRGBO(167, 201, 87, 1))),
               labelText: 'Ваш текущий возраст:',
-              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp),
+              labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.sp),
             ),
           ),
         ),
-        Container(
-          margin: const EdgeInsets.all(10.0),
-          height: 200.h,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.white.withOpacity(0)),
-          child: Column(children: <Widget>[
-            Center(
-                child: Text(
-              'Ваш Индекс Массы Тела:',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 25),
-            )),
-            Center(
-                child: Text(
-              BMICalculator.calculateBMI(
-                      double.parse(myController.weightController.text),
-                      double.parse(myController.heightController.text),
-                      int.parse(myController.ageController.text))
-                  .toString(),
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 23),
-            ))
-          ]),
-        )
+        SizedBox(height: 5.h,),
+        Column(children: <Widget>[
+          Center(
+              child: Text(
+            'Ваш Индекс Массы Тела:',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.sp),
+          ),),
+          SizedBox(height: 1.h,),
+          Center(
+              child: Text(
+            BMICalculator.calculateBMI(
+                    double.parse(myController.weightController.text),
+                    double.parse(myController.heightController.text),
+                    int.parse(myController.ageController.text))
+                .toString(),
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.sp),
+          ))
+        ])
       ],
     );
   }
