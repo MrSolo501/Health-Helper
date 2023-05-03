@@ -9,8 +9,8 @@ class recipes extends StatelessWidget {
   final String Stepscooking;
   final String cooktime;
 
-  recipes(
-      {required this.image,
+  const recipes(
+      {super.key, required this.image,
       required this.title,
       required this.ingridients,
       required this.Stepscooking,
@@ -25,7 +25,7 @@ class recipes extends StatelessWidget {
               style: TextStyle(fontSize: 25.sp, color: Colors.white),
             ),
             centerTitle: true,
-            backgroundColor: Color.fromRGBO(106, 153, 78, 1)),
+            backgroundColor: const Color.fromRGBO(106, 153, 78, 1)),
         body: DescriptionRecipe(
           image: image,
           title: title,

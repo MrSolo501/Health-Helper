@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'pages/home_page.dart';
 import 'package:sizer/sizer.dart';
 import 'package:health_helper/pages/welcome_page.dart';
-<<<<<<< HEAD
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -14,6 +11,8 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+
   runApp(const MyApp());
 }
 
@@ -33,9 +32,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Health Helper',
           theme: ThemeData(
-            primarySwatch: `Colors.green`,
+            primarySwatch: Colors.green,
           ),
-          home: WelcomeScreen(),
+          home: const WelcomeScreen(),
         );
       }
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+
 
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -16,14 +16,14 @@ class CalorieIntakeWidget extends StatelessWidget {
   CalorieIntakeWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    final _result = BMICalculator.calculateBMI(
+    final result = BMICalculator.calculateBMI(
         double.parse(myController.weightController.text),
         double.parse(myController.heightController.text),
         int.parse(myController.ageController.text));
-    if (_result >= 25) {
+    if (result >= 25) {
       _calorieIntake = 'от 1 500 до 2 400';
     } else {
-      if (_result < 18.6) {
+      if (result < 18.6) {
         _calorieIntake = 'от 2 100 до 2 600';
       } else {
         _calorieIntake = 'от 1 500 до 2 400';

@@ -16,7 +16,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   int _selectedScreen = 0;
   static  final List<Widget> _widgetOptions = <Widget>[
     const TaskWidget(),
-    const EdaScreenWidget(),
+     EdaScreenWidget(),
     SettingsScreenWidget(),
   ];
 
@@ -31,14 +31,14 @@ class _HomePageScreenState extends State<HomePageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromRGBO(242, 232, 207, 1),
+      backgroundColor: const Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title:  Text("Health Helper",
             style: TextStyle(
-                fontSize: 25.sp, color: Color.fromRGBO(255, 255, 255, 1)),
+                fontSize: 25.sp, color: const Color.fromRGBO(255, 255, 255, 1)),
             textDirection: TextDirection.ltr),
-        backgroundColor: Color.fromRGBO(106, 153, 78, 1),
+        backgroundColor: const Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,
       ),
       body: IndexedStack(
@@ -46,7 +46,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         children:  [
           //TaskWidget(),
           const HomePageScreenWidgets(),
-          const EdaScreenWidget(),
+           EdaScreenWidget(),
           SettingsScreenWidget(),
         ],
       ),
@@ -67,8 +67,8 @@ class _HomePageScreenState extends State<HomePageScreen> {
           ),
         ],
         selectedItemColor: Colors.white,
-        unselectedItemColor: Color.fromRGBO(56, 102, 65, 1),
-        backgroundColor: Color.fromRGBO(106, 153, 78, 1),
+        unselectedItemColor: const Color.fromRGBO(56, 102, 65, 1),
+        backgroundColor: const Color.fromRGBO(106, 153, 78, 1),
         onTap: onSelectScreen,
       ),
     );

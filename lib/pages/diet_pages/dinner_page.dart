@@ -3,6 +3,8 @@ import 'package:health_helper/recipe/recipesdinner.dart';
 import 'package:sizer/sizer.dart';
 
 class dinnerScreen extends StatelessWidget {
+  const dinnerScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,8 +13,8 @@ class dinnerScreen extends StatelessWidget {
             style: TextStyle(fontSize: 25.sp,color:Colors.white),
           ),
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(106, 153, 78, 1)),
-      body:Recipesdinner()
+          backgroundColor: const Color.fromRGBO(106, 153, 78, 1)),
+      body: Recipesdinner()
     );
   }
 }

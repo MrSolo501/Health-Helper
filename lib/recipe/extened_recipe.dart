@@ -8,8 +8,8 @@ class DescriptionRecipe extends StatelessWidget {
   final String Stepscooking;
   final String cooktime;
 
-  DescriptionRecipe(
-      {required this.image,
+  const DescriptionRecipe(
+      {super.key, required this.image,
       required this.title,
       required this.ingridients,
       required this.Stepscooking,
@@ -25,7 +25,7 @@ class DescriptionRecipe extends StatelessWidget {
           height: 30.h,
           decoration: BoxDecoration(
               color: Colors.black,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(8.sp),
               image: DecorationImage(
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.05), BlendMode.multiply),
@@ -40,17 +40,19 @@ class DescriptionRecipe extends StatelessWidget {
                     fontWeight: FontWeight.bold))),
         SizedBox(height: 1.h),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.w),
+            padding: EdgeInsets.symmetric(horizontal: 3.w),
             child: Text('Ингредиенты:',
                 style: TextStyle(color: Colors.black, fontSize: 18.sp))),
-        SizedBox(height: 3.h),
+        //SizedBox(height: 3.h),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.w),
+            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.h),
             child: Text(ingridients)),
-        SizedBox(height: 13.sp),
+        //SizedBox(height: 5.h),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 5.w),
-          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          
+          padding:  EdgeInsets.symmetric(horizontal: 3.w, vertical: 3.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
             Text('Время приготовления:',
                 style: TextStyle(color: Colors.black, fontSize: 18.sp)),
@@ -60,16 +62,16 @@ class DescriptionRecipe extends StatelessWidget {
             )
           ]),
         ),
-        SizedBox(height: 5.h),
+        //SizedBox(height: 13.sp),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 3.h),
+            padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 3.h),
             child: Text('Шаги приготовления:',
                 style: TextStyle(color: Colors.black, fontSize: 18.sp))),
-        SizedBox(height: 3.h),
+          //SizedBox(height: 3.h),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.h),
+            padding: EdgeInsets.symmetric(horizontal: 3.w),
             child: Text(Stepscooking),),
-            SizedBox(height: 10.h,)
+            SizedBox(height: 10.h,),
       ],
     );
   }

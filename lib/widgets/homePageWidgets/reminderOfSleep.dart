@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'dart:math' as math;
 
 import 'package:sizer/sizer.dart';
+
 
 
 class ReminerOfSleepWidget extends StatelessWidget {
   
   final String _sleepTime = "23:00";
   final String _wakeUpTime = "07:40";
+
+  const ReminerOfSleepWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

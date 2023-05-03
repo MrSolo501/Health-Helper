@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -92,7 +93,7 @@ class ScheduleWidget extends StatelessWidget {
       children: [
         Text(
           'Сегодня: ${now.day}.${now.month}.${now.year}',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         SizedBox(height: 3.h),
         Text(

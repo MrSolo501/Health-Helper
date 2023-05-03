@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:health_helper/pages/home_page.dart';
 import 'package:sizer/sizer.dart';
 
 
@@ -18,14 +17,12 @@ class _TaskWidgetState extends State<TaskWidget> {
       width: 50.w,
       height: 100.h,
       decoration: BoxDecoration(
-        
           border: Border.all(
             color: Colors.green,
-            width: 0.5.w,
+              width: 0.5.w,
           ),
           borderRadius: BorderRadius.circular(20.0.sp),
           color: Colors.white),
-      //padding:  EdgeInsets.all(13.sp),
       
       child: Column(
         children: [
@@ -37,7 +34,9 @@ class _TaskWidgetState extends State<TaskWidget> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 5.h,),
+            
+       
+           SizedBox(height: 5.h,),
           for (ToDo todoo in todosList)
             ToDoItem(
               todo: todoo,
@@ -94,46 +93,41 @@ class ToDoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       //margin: EdgeInsets.only(bottom: 13.h),
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green,
-          width: 0.5.w,
+          width: 1.w,
         ),
         borderRadius: BorderRadius.circular(20.0.sp),
         color: Colors.white,
       ),
-      child: SizedBox(
-        width: 80.w,
-        child: ListTile(
-          
-          onTap: () {
-            onToDoChanged(todo);
-          },
-          //contentPadding:
-               //EdgeInsets.symmetric(vertical: 3.0.h, horizontal: 14.0.w),
-         
-          leading: Icon(
-            todo.isDone ? Icons.check_box : Icons.check_box_outline_blank,
-            color: Colors.lightGreen,
-          ),
-          title: Text(
-            todo.todoText!,
-            style: TextStyle(
-              fontSize: 16.sp,
-              color: Colors.black,
-              decoration: todo.isDone ? TextDecoration.lineThrough : null,
-            ),
-          ),
-          trailing: SizedBox(
-              
-              width: 30.w,
-              child: Text(
-                todo.time!,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
-              )),
+      child: ListTile(
+        onTap: () {
+          onToDoChanged(todo);
+        },
+        contentPadding:
+             EdgeInsets.symmetric(vertical: 3.0.h, horizontal: 14.0.w),
+       
+        leading: Icon(
+          todo.isDone ? Icons.check_box : Icons.check_box_outline_blank,
+          color: Colors.lightGreen,
         ),
+        title: Text(
+          todo.todoText!,
+          style: TextStyle(
+            fontSize: 16.sp,
+            color: Colors.black,
+            decoration: todo.isDone ? TextDecoration.lineThrough : null,
+          ),
+        ),
+        trailing: SizedBox(
+            
+            width: MediaQuery.of(context).size.width/5.w,
+            child: Text(
+              todo.time!,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+            )),
       ),
     );
   }

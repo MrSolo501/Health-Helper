@@ -10,12 +10,12 @@ class BmiResultScreen extends StatelessWidget {
   var age;
 
   BmiResultScreen(
-      {required this.weight, required this.height, required this.age});
+      {super.key, required this.weight, required this.height, required this.age});
 
   @override
   Widget build(BuildContext context) {
     double bmiResult = BMICalculator.calculateBMI(weight, height, age);
-    
+
     String getResult() {
       if (bmiResult >= 25) {
         return 'Избыточная масса тела';
@@ -27,14 +27,14 @@ class BmiResultScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(242, 232, 207, 1),
+      backgroundColor: const Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title:  Text("Health Helper",
+        title: Text("Health Helper",
             style: TextStyle(
-                fontSize: 20.sp, color: Color.fromRGBO(255, 255, 255, 1)),
+                fontSize: 20.sp, color: const Color.fromRGBO(255, 255, 255, 1)),
             textDirection: TextDirection.ltr),
-        backgroundColor: Color.fromRGBO(106, 153, 78, 1),
+        backgroundColor: const Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,
       ),
       body: Center(
@@ -44,7 +44,7 @@ class BmiResultScreen extends StatelessWidget {
             Text(
               getResult(),
               style: TextStyle(
-                color: Color.fromRGBO(56, 102, 65, 1),
+                color: const Color.fromRGBO(56, 102, 65, 1),
                 fontSize: 22.0.sp,
                 fontWeight: FontWeight.bold,
               ),
@@ -55,7 +55,7 @@ class BmiResultScreen extends StatelessWidget {
             Text(
               'Индекс массы тела: ${bmiResult.toStringAsFixed(1)}',
               style: TextStyle(
-                color: Color.fromRGBO(56, 102, 65, 1),
+                color: const Color.fromRGBO(56, 102, 65, 1),
                 fontSize: 18.0.sp,
               ),
             ),
@@ -64,19 +64,18 @@ class BmiResultScreen extends StatelessWidget {
             ),
             SizedBox(
               height: 10.h,
-                width: 80.w,
+              width: 80.w,
               child: ElevatedButton(
-                
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomePageScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const HomePageScreen()),
                   );
                 },
                 style: TextButton.styleFrom(
                     foregroundColor: Colors.black87,
-                    backgroundColor: Color.fromRGBO(106, 153, 78, 1),
-                    
+                    backgroundColor: const Color.fromRGBO(106, 153, 78, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0.sp),
                     )),

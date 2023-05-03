@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 import 'package:sizer/sizer.dart';
 
@@ -22,7 +21,6 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green,
-          width: 0.5.w,
         ),
         borderRadius: BorderRadius.circular(20.0.sp),
         color: Colors.white,
@@ -33,18 +31,14 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
             textAlign: TextAlign.center,
             text: TextSpan(children: [
               TextSpan(
-                text: 'За сегодня ты выпил:',
-                style: TextStyle(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-              TextSpan(
-                  text: ' $_water🥛',
+                  text: 'За сегодня ты выпил:',
                   style: TextStyle(
                       color: Colors.blue,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.bold))
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold),),
+                      TextSpan( text:  ' $_water🥛',
+                      style:  TextStyle(color: Colors.green,fontSize: 20.sp,fontWeight: FontWeight.bold)
+                    )
             ]),
           ),
           SizedBox(
@@ -59,7 +53,7 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
             },
             style: ButtonStyle(
               padding: MaterialStateProperty.all(
-                  EdgeInsets.symmetric(horizontal:10.w)),
+                  EdgeInsets.symmetric(horizontal: 10.w)),
               backgroundColor:
                   MaterialStateProperty.all(Colors.lightBlue.shade100),
             ),

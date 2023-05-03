@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 import 'package:health_helper/pages/diet_pages/breakfast_page.dart';
 import 'package:health_helper/pages/diet_pages/dinner_page.dart';
@@ -12,6 +11,8 @@ String _formattedDate = "${_now.hour}:${_now.minute}";
 class MealNowWidget extends StatelessWidget {
   var toogle = true;
   late String _nextMeal;
+
+  MealNowWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class MealNowWidget extends StatelessWidget {
             style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
           ),
           Text(
-            '${_nextMeal}',
+            _nextMeal,
             style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 1.h),
@@ -53,15 +54,15 @@ class MealNowWidget extends StatelessWidget {
             onPressed: () {
               if (_nextMeal == "Утро") {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => breakfastScreen()));
+                    MaterialPageRoute(builder: (context) => const breakfastScreen()));
               } else {
                 if (_nextMeal == "Обед") {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => lunchScreen()));
+                      MaterialPageRoute(builder: (context) => const lunchScreen()));
                 }
                 if (_nextMeal == "Ужин") {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => dinnerScreen()));
+                      MaterialPageRoute(builder: (context) => const dinnerScreen()));
                 }
               }
             },

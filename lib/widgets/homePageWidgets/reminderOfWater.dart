@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 import 'package:sizer/sizer.dart';
 
 
 class ReminerOfWaterWidget extends StatelessWidget {
   final _countOfWater = 8;
+
+  const ReminerOfWaterWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return Positioned(

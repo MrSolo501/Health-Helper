@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:health_helper/widgets/homePageWidgets/tasksListWidget.dart';
-import 'package:health_helper/widgets/homePageWidgets/calorieIntakeWidget.dart';
 import 'package:health_helper/widgets/homePageWidgets/mealNowWidget.dart';
-import 'package:health_helper/widgets/homePageWidgets/planExecutionLevel.dart';
 import 'package:health_helper/widgets/homePageWidgets/waterTrackerWidget.dart';
 import 'package:sizer/sizer.dart';
 
-import 'homePageWidgets/new_task_widget.dart';
-import 'homePageWidgets/reminderOfSleep.dart';
-import 'homePageWidgets/reminderOfWater.dart';
+import 'homePageWidgets/new_task_widger.dart';
 
 class HomePageScreenWidgets extends StatefulWidget {
   const HomePageScreenWidgets({super.key});
@@ -18,10 +13,9 @@ class HomePageScreenWidgets extends StatefulWidget {
 }
 
 class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
-  
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+     return SingleChildScrollView(
       child: Align(
         alignment: Alignment.center,
         child: Container(
@@ -33,7 +27,7 @@ class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
             const WaterTrackerWidget(),
             SizedBox(height: 5.h,),
             MealNowWidget(),
-            SizedBox(height: 10.h,),
+              SizedBox(height: 10.h,),
           
             // CalorieIntakeWidget(),
             // ReminerOfWaterWidget(),
@@ -41,6 +35,7 @@ class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
           ]),
         ),
       ),
-    );
+        );
+   
   }
 }

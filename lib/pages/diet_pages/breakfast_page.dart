@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:health_helper/recipe/recipesbreakfast.dart';
 import 'package:sizer/sizer.dart';
 
 
 class breakfastScreen extends StatelessWidget {
+  const breakfastScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,8 +16,8 @@ class breakfastScreen extends StatelessWidget {
             style: TextStyle(fontSize: 25.sp,color: Colors.white),
           ),
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(106, 153, 78, 1)),
-      body: Recipesbreakfast()
+          backgroundColor: const Color.fromRGBO(106, 153, 78, 1)),
+      body:  Recipesbreakfast()
     );
   }
 }
