@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/result_screen.dart';
+import 'package:sizer/sizer.dart';
 import 'home_page.dart';
 import 'package:get/get.dart';
 
@@ -51,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
         title:  Text("Health Helper",
@@ -60,14 +61,14 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 15),
-        child: Form(
-          key: _formKey,
+      body: Form(
+        key: _formKey,
+        child: Padding(
+          padding:  EdgeInsets.symmetric(vertical: 5.h,horizontal: 5.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-
+        
               TextFormField(
                 controller: myController.weightController,
                 maxLength: 3,
@@ -93,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 5.h),
               TextFormField(
                 controller: myController.heightController,
                 maxLength: 3,
@@ -119,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 5.h),
               TextFormField(
                 controller: myController.ageController,
                 maxLength: 3,
@@ -145,23 +146,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 30.h),
-              TextButton(
-                onPressed: _login,
-                style: TextButton.styleFrom(
-                    foregroundColor: Colors.black87,
-                    backgroundColor: Color.fromRGBO(106, 153, 78, 1),
-                    padding: EdgeInsets.symmetric(vertical: 20.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )
-                  ),
-                  child:  Text('Рассчитать ИМТ',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0.h,
-                    ),),
+              SizedBox(height: 10.h),
+              SizedBox(
+                height: 10.h,
+                width: 80.w,
+                child: ElevatedButton(
+                  
+                  onPressed: _login,
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.black87,
+                      backgroundColor: Color.fromRGBO(106, 153, 78, 1),
+                      //padding: EdgeInsets.symmetric(vertical: 20.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0.sp),
+                      )
+                    ),
+                    child:  Text('Рассчитать ИМТ',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0.sp,
+                      ),),
+                ),
               ),
             ]
           ),

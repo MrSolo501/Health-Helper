@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sizer/sizer.dart';
 
 class DescriptionRecipe extends StatelessWidget {
   final String image;
@@ -20,9 +20,9 @@ class DescriptionRecipe extends StatelessWidget {
     return ListView(
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          margin: EdgeInsets.symmetric(horizontal: 3.w, vertical: 3.h),
           width: MediaQuery.of(context).size.width,
-          height: 180.h,
+          height: 30.h,
           decoration: BoxDecoration(
               color: Colors.black,
               borderRadius: BorderRadius.circular(8),
@@ -38,35 +38,38 @@ class DescriptionRecipe extends StatelessWidget {
                     color: Colors.black,
                     fontSize: 22.sp,
                     fontWeight: FontWeight.bold))),
-        SizedBox(height: 15.sp),
+        SizedBox(height: 1.h),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.h),
+            padding: EdgeInsets.symmetric(horizontal: 5.w),
             child: Text('Ингредиенты:',
                 style: TextStyle(color: Colors.black, fontSize: 18.sp))),
-        SizedBox(height: 7.sp),
+        SizedBox(height: 3.h),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.h),
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Text(ingridients)),
         SizedBox(height: 13.sp),
-        Row(children: [
-          Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.h),
-              child: Text('Время приготовления:',
-                  style: TextStyle(color: Colors.black, fontSize: 18.sp))),
-          Text(
-            cooktime,
-            style: TextStyle(fontSize: 18.sp),
-          )
-        ]),
-        SizedBox(height: 13.sp),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.h),
+          padding: EdgeInsets.symmetric(horizontal: 5.w),
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            Text('Время приготовления:',
+                style: TextStyle(color: Colors.black, fontSize: 18.sp)),
+            Text(
+              cooktime,
+              style: TextStyle(fontSize: 18.sp),
+            )
+          ]),
+        ),
+        SizedBox(height: 5.h),
+        Padding(
+            padding: EdgeInsets.symmetric(horizontal: 3.h),
             child: Text('Шаги приготовления:',
                 style: TextStyle(color: Colors.black, fontSize: 18.sp))),
-        SizedBox(height: 5.sp),
+        SizedBox(height: 3.h),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.h),
-            child: Text(Stepscooking))
+            padding: EdgeInsets.symmetric(horizontal: 5.h),
+            child: Text(Stepscooking),),
+            SizedBox(height: 10.h,)
       ],
     );
   }

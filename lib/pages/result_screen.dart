@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/home_page.dart';
+import 'package:sizer/sizer.dart';
 
 import '../widgets/bmi_calculator.dart';
 
@@ -32,7 +32,7 @@ class BmiResultScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title:  Text("Health Helper",
             style: TextStyle(
-                fontSize: 25.sp, color: Color.fromRGBO(255, 255, 255, 1)),
+                fontSize: 20.sp, color: Color.fromRGBO(255, 255, 255, 1)),
             textDirection: TextDirection.ltr),
         backgroundColor: Color.fromRGBO(106, 153, 78, 1),
         centerTitle: true,
@@ -50,39 +50,43 @@ class BmiResultScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 16.0.h,
+              height: 6.0.h,
             ),
             Text(
               'Индекс массы тела: ${bmiResult.toStringAsFixed(1)}',
               style: TextStyle(
                 color: Color.fromRGBO(56, 102, 65, 1),
-                fontSize: 18.0.h,
+                fontSize: 18.0.sp,
               ),
             ),
             SizedBox(
-              height: 20.0.h,
+              height: 10.0.h,
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomePageScreen()),
-                );
-              },
-              style: TextButton.styleFrom(
-                  foregroundColor: Colors.black87,
-                  backgroundColor: Color.fromRGBO(106, 153, 78, 1),
-                  padding:
-                      EdgeInsets.symmetric(vertical: 20.0, horizontal: 100),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  )),
-              child: Text(
-                'Приступим',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16.0.sp,
+            SizedBox(
+              height: 10.h,
+                width: 80.w,
+              child: ElevatedButton(
+                
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePageScreen()),
+                  );
+                },
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.black87,
+                    backgroundColor: Color.fromRGBO(106, 153, 78, 1),
+                    
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0.sp),
+                    )),
+                child: Text(
+                  'Приступим',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0.sp,
+                  ),
                 ),
               ),
             ),

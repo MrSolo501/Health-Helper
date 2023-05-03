@@ -31,7 +31,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_screenutil: ^5.7.0
+  
+  sizer: ^2.0.15
   get: ^4.6.5
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

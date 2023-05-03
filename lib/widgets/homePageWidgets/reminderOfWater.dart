@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sizer/sizer.dart';
+
 
 class ReminerOfWaterWidget extends StatelessWidget {
   final _countOfWater = 8;

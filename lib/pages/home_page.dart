@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_helper/pages/settings.dart';
 import 'package:health_helper/widgets/homePageWidgets/tasksListWidget.dart';
 import 'package:health_helper/widgets/homePageScreenWidgets.dart';
+import 'package:sizer/sizer.dart';
 import 'diet.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -30,6 +30,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
         automaticallyImplyLeading: false,
