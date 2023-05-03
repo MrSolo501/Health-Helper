@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_helper/pages/settings.dart';
-import 'package:health_helper/widgets/homePageWidgets/tasksListWidget.dart';
-import 'package:health_helper/widgets/homePageScreenWidgets.dart';
+import 'package:health_helper/widgets/home_page_widgets/tasksListWidget.dart';
+import 'package:health_helper/pages/home_page_screen.dart';
 import 'package:sizer/sizer.dart';
 import 'diet.dart';
 

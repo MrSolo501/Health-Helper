@@ -97,7 +97,7 @@ class Recipesbreakfast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (BMICalculator.calculateBMI(double.parse(myController.weightController.text), double.parse(myController.heightController.text), int.parse(myController.ageController.text)) >= 25) {
+    if (BMICalculator.calculateBMI(int.parse(myController.weightController.text), int.parse(myController.heightController.text), int.parse(myController.ageController.text)) >= 25) {
       _dishes.clear();
       _dishes.addAll([
         Dishes(
@@ -174,7 +174,7 @@ class Recipesbreakfast extends StatelessWidget {
           cooktime: '20 мин',
         ),
       ]);
-    } else if (BMICalculator.calculateBMI(double.parse(myController.weightController.text), double.parse(myController.heightController.text), int.parse(myController.ageController.text)) < 18.6) {
+    } else if (BMICalculator.calculateBMI(int.parse(myController.weightController.text), int.parse(myController.heightController.text), int.parse(myController.ageController.text)) < 18.6) {
       _dishes.clear();
       _dishes.addAll([
         Dishes(

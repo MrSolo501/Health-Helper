@@ -88,7 +88,7 @@ class Recipeslunch extends StatelessWidget {
    Recipeslunch({super.key});
   @override
   Widget build(BuildContext context) {
-    if(BMICalculator.calculateBMI(double.parse(myController.weightController.text), double.parse(myController.heightController.text), int.parse(myController.ageController.text))>=25){
+    if(BMICalculator.calculateBMI(int.parse(myController.weightController.text), int.parse(myController.heightController.text), int.parse(myController.ageController.text))>=25){
       _dishes.clear();
       _dishes.addAll([Dishes( cooktime: '20 мин',
         title: 'Овощной салат',
@@ -154,7 +154,7 @@ class Recipeslunch extends StatelessWidget {
           cooktime: '2 часа',
         ),
       ]);
-    }else if (BMICalculator.calculateBMI(double.parse(myController.weightController.text), double.parse(myController.heightController.text), int.parse(myController.ageController.text))<18.6){
+    }else if (BMICalculator.calculateBMI(int.parse(myController.weightController.text), int.parse(myController.heightController.text), int.parse(myController.ageController.text))<18.6){
       _dishes.clear();
       _dishes.addAll([Dishes( cooktime: '1 час',
         title: 'Паста с говядиной в томатном соусе, фрукты, стакан молока',

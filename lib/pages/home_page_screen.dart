@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:health_helper/widgets/homePageWidgets/mealNowWidget.dart';
-import 'package:health_helper/widgets/homePageWidgets/waterTrackerWidget.dart';
+import 'package:health_helper/widgets/home_page_widgets/calorieIntakeWidget.dart';
+import 'package:health_helper/widgets/home_page_widgets/mealNowWidget.dart';
+import 'package:health_helper/widgets/home_page_widgets/waterTrackerWidget.dart';
 import 'package:sizer/sizer.dart';
 
-import 'homePageWidgets/new_task_widger.dart';
+import '../widgets/home_page_widgets/new_task_widger.dart';
+import '../widgets/home_page_widgets/reminderOfWater.dart';
 
 class HomePageScreenWidgets extends StatefulWidget {
   const HomePageScreenWidgets({super.key});
@@ -27,10 +29,11 @@ class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
             const WaterTrackerWidget(),
             SizedBox(height: 5.h,),
             MealNowWidget(),
-              SizedBox(height: 10.h,),
+              SizedBox(height: 5.h,),
           
-            // CalorieIntakeWidget(),
-            // ReminerOfWaterWidget(),
+             CalorieIntakeWidget(),
+             SizedBox(height: 5.h,),
+            ReminerOfWaterWidget(),
             // ReminerOfSleepWidget(),
           ]),
         ),

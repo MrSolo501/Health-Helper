@@ -16,13 +16,13 @@ class MealNowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (_now.hour > 19 || ((_now.hour > -1) && (_now.hour < 8))) {
+    if (_now.hour > 18 || ((_now.hour > -1) && (_now.hour < 9))) {
       _nextMeal = "Утро";
     } else {
-      if (_now.hour >= 8 && _now.hour < 14) {
+      if (_now.hour >= 8 && _now.hour < 12) {
         _nextMeal = "Обед";
       }
-      if (_now.hour >= 14 && _now.hour < 19) {
+      if (_now.hour >= 12 && _now.hour < 19) {
         _nextMeal = "Ужин";
       }
     }
