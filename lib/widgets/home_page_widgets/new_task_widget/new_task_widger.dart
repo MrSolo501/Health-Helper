@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+import 'clock_widget.dart';
+
 class ScheduleWidget extends StatelessWidget {
   ScheduleWidget({
     super.key,
@@ -92,14 +94,11 @@ class ScheduleWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Сегодня: ${now.day}.${now.month}.${now.year}',
+          'Сегодня: ${(now.day<10)? "0${now.day}":"${now.day}"}.${(now.month<10)? "0${now.month}":"${now.month}"}.${now.year}',
           style: Theme.of(context).textTheme.titleLarge,
         ),
         SizedBox(height: 3.h),
-        Text(
-          'Текущее время: $time',
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
-        ),
+       ClockWidget(),
       ],
     );
   }

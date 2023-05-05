@@ -10,6 +10,7 @@ class lunchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       return Scaffold(
+         backgroundColor: const Color.fromRGBO(242, 232, 207, 1),
       appBar: AppBar(
           title: Text(
             'Обед',

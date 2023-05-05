@@ -18,7 +18,6 @@ class Dishes {
 }
 
 class Recipesdinner extends StatelessWidget {
-  final MyController myController = Get.find();
   final _dishes = [
     Dishes(
       cooktime: '1 час',
@@ -99,7 +98,12 @@ class Recipesdinner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (BMICalculator.calculateBMI(int.parse(myController.weightController.text), int.parse(myController.heightController.text), int.parse(myController.ageController.text)) >= 25) {
+    
+    return FutureBuilder<double>(
+       future: BMICalculator.getBMI(),
+        builder: (context, snapshot) {
+          double bmi = snapshot.data ?? 0;
+          if (bmi >= 25) {
       _dishes.clear();
       _dishes.addAll([
         Dishes(
@@ -177,7 +181,7 @@ class Recipesdinner extends StatelessWidget {
           cooktime: '40 мин',
         ),
       ]);
-    } else if (BMICalculator.calculateBMI(int.parse(myController.weightController.text), int.parse(myController.heightController.text), int.parse(myController.ageController.text)) < 18.6) {
+    } else if (bmi < 18.6) {
       _dishes.clear();
       _dishes.addAll([
         Dishes(
@@ -247,74 +251,76 @@ class Recipesdinner extends StatelessWidget {
         ),
       ]);
     }
-    return ListView.builder(
-        itemCount: 5,
-        itemExtent: 30.h,
-        itemBuilder: (BuildContext context, int index) {
-          final dishes = _dishes[index];
-          final Recipes=_recipes[index];
-          return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => recipes(
-                              image: dishes.image,
-                              title: dishes.title,
-                              ingridients: Recipes.ingridients,
-                              Stepscooking: Recipes.Stepscooking, cooktime: dishes.cooktime,
-                            )));
-              },
-              child: Container(
-                  margin:  EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
-                  //width: MediaQuery.of(context).size.width,
-                  height: 30.h,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(12),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(0.35),
-                              BlendMode.multiply),
-                          image: AssetImage(dishes.image),
-                          fit: BoxFit.cover)),
-                  child: Stack(
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 0.5.sp),
-                          child: Text(
-                            dishes.title,
-                            style: TextStyle(fontSize: 23.sp, color: Colors.white),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
-                            textAlign: TextAlign.center,
+        return ListView.builder(
+            itemCount: 5,
+            itemExtent: 30.h,
+            itemBuilder: (BuildContext context, int index) {
+              final dishes = _dishes[index];
+              final Recipes=_recipes[index];
+              return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => recipes(
+                                  image: dishes.image,
+                                  title: dishes.title,
+                                  ingridients: Recipes.ingridients,
+                                  Stepscooking: Recipes.Stepscooking, cooktime: dishes.cooktime,
+                                )));
+                  },
+                  child: Container(
+                      margin:  EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+                      //width: MediaQuery.of(context).size.width,
+                      height: 30.h,
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(12),
+                          image: DecorationImage(
+                              colorFilter: ColorFilter.mode(
+                                  Colors.black.withOpacity(0.35),
+                                  BlendMode.multiply),
+                              image: AssetImage(dishes.image),
+                              fit: BoxFit.cover)),
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 0.5.sp),
+                              child: Text(
+                                dishes.title,
+                                style: TextStyle(fontSize: 23.sp, color: Colors.white),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      Align(
-                        child: Container(
-                          padding: EdgeInsets.all(5.sp),
-                          margin: EdgeInsets.all(10.sp),
-                          decoration: BoxDecoration(
-                            color: Colors.black.withOpacity(0.05),
-                            borderRadius: BorderRadius.circular(14.sp),
-                          ),
-                          alignment: Alignment.bottomRight,
-                          child: Row(
-                            children: [
-                              Icon(Icons.timer, color: Colors.white, size: 18.sp),
-                              Text(
-                                dishes.cooktime,
-                                style: const TextStyle(color: Colors.white),
-                              )
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  )));
-        });
+                          Align(
+                            child: Container(
+                              padding: EdgeInsets.all(5.sp),
+                              margin: EdgeInsets.all(10.sp),
+                              decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.05),
+                                borderRadius: BorderRadius.circular(14.sp),
+                              ),
+                              alignment: Alignment.bottomRight,
+                              child: Row(
+                                children: [
+                                  Icon(Icons.timer, color: Colors.white, size: 18.sp),
+                                  Text(
+                                    dishes.cooktime,
+                                    style: const TextStyle(color: Colors.white),
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),),);
+            });
+      }
+    );
   }
 }

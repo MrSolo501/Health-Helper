@@ -13,13 +13,27 @@ class WaterTrackerWidget extends StatefulWidget {
 class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
   static const counterKey = 'counter';
   var _water = 0;
+  late String data;
   @override
   void initState() {
     final now = DateTime.now();
-    final String _day = now.day.toString();
-    _initCounter(_day);
+    data = "${now.day}-${now.month}-${now.year}";
+    print(data);
+
+    _initCounter();
 
     super.initState();
+  }
+
+  void _initCounter() async {
+    var prefs = await SharedPreferences.getInstance();
+    if (data != prefs.getString('data')) {
+      print(111111111111111111);
+      prefs.remove(counterKey);
+      _setData();
+      
+    }
+    setState(() => _water = prefs.getInt(counterKey) ?? 0);
   }
 
   void _incrementCounter() async {
@@ -34,13 +48,9 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
     prefs.setInt(counterKey, _water);
   }
 
-  void _initCounter(String day) async {
+  Future _setData() async {
     var prefs = await SharedPreferences.getInstance();
-    if (day != DateTime.now().day.toString()) {
-      prefs.remove(counterKey);
-    }
-
-    setState(() => _water = prefs.getInt(counterKey) ?? 0);
+    prefs.setString('data', data);
   }
 
   @override

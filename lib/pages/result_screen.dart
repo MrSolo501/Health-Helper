@@ -10,12 +10,15 @@ class BmiResultScreen extends StatelessWidget {
   var age;
 
   BmiResultScreen(
-      {super.key, required this.weight, required this.height, required this.age});
+      {super.key,
+      required this.weight,
+      required this.height,
+      required this.age});
 
   @override
   Widget build(BuildContext context) {
     double bmiResult = BMICalculator.calculateBMI(weight, height, age);
-
+    BMICalculator.setBMI(bmiResult);
     String getResult() {
       if (bmiResult >= 25) {
         return 'Избыточная масса тела';

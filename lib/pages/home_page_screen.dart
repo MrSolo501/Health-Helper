@@ -4,7 +4,7 @@ import 'package:health_helper/widgets/home_page_widgets/mealNowWidget.dart';
 import 'package:health_helper/widgets/home_page_widgets/waterTrackerWidget.dart';
 import 'package:sizer/sizer.dart';
 
-import '../widgets/home_page_widgets/new_task_widger.dart';
+import '../widgets/home_page_widgets/new_task_widget/new_task_widger.dart';
 import '../widgets/home_page_widgets/reminderOfWater.dart';
 
 class HomePageScreenWidgets extends StatefulWidget {
@@ -33,7 +33,8 @@ class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
           
              CalorieIntakeWidget(),
              SizedBox(height: 5.h,),
-            ReminerOfWaterWidget(),
+            const ReminerOfWaterWidget(),
+            SizedBox(height: 5.h,),
             // ReminerOfSleepWidget(),
           ]),
         ),

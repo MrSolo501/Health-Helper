@@ -7,7 +7,6 @@ import 'package:sizer/sizer.dart';
 
 import 'login_screen.dart';
 
-
 class SettingsScreenWidget extends StatefulWidget {
   SettingsScreenWidget({Key? key}) : super(key: key);
 
@@ -56,15 +55,24 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
           child: TextField(
             controller: heightController,
             onChanged: (String text) {
-           
               setState(() {
+                if (text != "") {
+                  text1 = BMICalculator.calculateBMI(
+                    double.parse(text),
+                    int.parse(heightController.text),
+                    int.parse(ageController.text),
+                  ).toString();
+                  BMICalculator.setBMI(
+                  BMICalculator.calculateBMI(
+                    double.parse(text),
+                    int.parse(heightController.text),
+                    int.parse(ageController.text),
+                  ),
+                );
+                }else{
+                  heightController.text = "0";
+                }
                 
-                text1 = BMICalculator.calculateBMI(
-                  double.parse(text),
-                  int.parse(heightController.text),
-                  int.parse(ageController.text),
-                ).toString();
-                print(text);
               });
             },
             maxLength: 3,
@@ -96,11 +104,20 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
             maxLength: 3,
             onChanged: (String text) {
               setState(() {
-                text1 = BMICalculator.calculateBMI(
-                  int.parse(weightController.text),
-                  int.parse(text),
-                  int.parse(ageController.text),
-                ).toString();
+                if (text != "") {
+                  text1 = BMICalculator.calculateBMI(
+                    int.parse(weightController.text),
+                    int.parse(text),
+                    int.parse(ageController.text),
+                  ).toString();
+                  BMICalculator.setBMI(BMICalculator.calculateBMI(
+                    int.parse(weightController.text),
+                    int.parse(text),
+                    int.parse(ageController.text),
+                  ));
+                } else {
+                  weightController.text = "0";
+                }
               });
             },
             keyboardType: TextInputType.number,
@@ -130,11 +147,20 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
             maxLength: 2,
             onChanged: (String text) {
               setState(() {
-                text1 = BMICalculator.calculateBMI(
-                  int.parse(weightController.text),
-                  int.parse(heightController.text),
-                  int.parse(text),
-                ).toString();
+                if (text != "") {
+                  text1 = BMICalculator.calculateBMI(
+                    int.parse(weightController.text),
+                    int.parse(heightController.text),
+                    int.parse(text),
+                  ).toString();
+                  BMICalculator.setBMI(BMICalculator.calculateBMI(
+                    int.parse(weightController.text),
+                    int.parse(heightController.text),
+                    int.parse(text),
+                  ));
+                } else {
+                  ageController.text = "0";
+                }
               });
             },
             keyboardType: TextInputType.number,
