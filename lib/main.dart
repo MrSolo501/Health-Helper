@@ -1,12 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:health_helper/Services/auth.dart';
+import 'package:health_helper/domain/user.dart';
 import 'package:health_helper/pages/landing.dart';
 import 'package:sizer/sizer.dart';
 import 'package:health_helper/pages/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,12 +33,16 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
+      return StreamProvider<AuthUser?>.value(
+      value: AuthService().currentUser,
+      initialData: null,
+      child:MaterialApp(
         title: 'Health Helper',
         theme: ThemeData(
           primarySwatch: Colors.green,
         ),
         home: LandingPage(),
+      )
       );
     });
   }

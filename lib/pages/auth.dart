@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:health_helper/Services/auth.dart';
+
+import '../domain/user.dart';
 
 class AuthorizationPage extends StatefulWidget {
   @override
@@ -13,6 +17,8 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
   String _email = '';
   String _password = '';
   bool showlogin = true;
+
+  AuthService _authService=AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -99,12 +105,52 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
           ));
     }
 
-    void _buttonAction() {
+    void _loginButtonAction() async {
       _email = _emailController.text;
       _password = _passwordController.text;
 
-      _emailController.clear();
-      _passwordController.clear();
+      if(_email.isEmpty || _password.isEmpty) return;
+
+      AuthUser? user=await _authService.signInWithEmailAndPassword(_email.trim(), _password.trim());
+      if(user==null){
+        Fluttertoast.showToast(
+            msg: "Не получается войти,пожалуйста проверьте вашу почту или пароль",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
+      }else{
+        _emailController.clear();
+        _passwordController.clear();
+      }
+
+    }
+
+    void _registerButtonAction() async {
+      _email = _emailController.text;
+      _password = _passwordController.text;
+
+      if(_email.isEmpty || _password.isEmpty) return;
+
+      AuthUser? user=await _authService.registerWithEmailAndPassword(_email.trim(), _password.trim());
+      if(user==null){
+        Fluttertoast.showToast(
+            msg: "Не получается войти,пожалуйста проверьте вашу почту или пароль",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
+      }else{
+        _emailController.clear();
+        _passwordController.clear();
+      }
+
     }
 
     return Scaffold(
@@ -115,10 +161,10 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
           (
               showlogin ? Column(
                 children: <Widget>[
-                  _form('LOGIN', _buttonAction),
+                  _form('Вход', _loginButtonAction),
                   Padding(padding: EdgeInsets.all(10),
                       child: GestureDetector(
-                        child: Text("Not registered yet? Register!",
+                        child: Text("Ещё не зарегистрировались? Регистрируйтесь!",
                           style: TextStyle(fontSize: 20, color: Colors.white),),
                         onTap: () {
                           setState(() {
@@ -130,10 +176,10 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
               )
           :Column(
                 children: <Widget>[
-                  _form('REGISTER', _buttonAction),
+                  _form('Регистрация', _registerButtonAction),
                   Padding(padding: EdgeInsets.all(10),
                       child: GestureDetector(
-                        child: Text("Already registered? Login!",
+                        child: Text("Уже зарегистрированы? Входите!",
                           style: TextStyle(fontSize: 20, color: Colors.white),),
                         onTap: () {
                           setState(() {

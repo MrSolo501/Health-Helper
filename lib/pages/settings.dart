@@ -2,9 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:health_helper/Services/auth.dart';
+import 'package:health_helper/pages/landing.dart';
 import 'package:health_helper/widgets/bmi_calculator.dart';
 import 'package:sizer/sizer.dart';
-
 import 'login_screen.dart';
 
 class SettingsScreenWidget extends StatefulWidget {
@@ -29,6 +30,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
 
   late TextEditingController ageController;
   late String text1;
+
   @override
   void initState() {
     weightController =
@@ -63,16 +65,15 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                     int.parse(ageController.text),
                   ).toString();
                   BMICalculator.setBMI(
-                  BMICalculator.calculateBMI(
-                    double.parse(text),
-                    int.parse(heightController.text),
-                    int.parse(ageController.text),
-                  ),
-                );
-                }else{
+                    BMICalculator.calculateBMI(
+                      double.parse(text),
+                      int.parse(heightController.text),
+                      int.parse(ageController.text),
+                    ),
+                  );
+                } else {
                   heightController.text = "0";
                 }
-                
               });
             },
             maxLength: 3,
@@ -201,7 +202,21 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
             text1,
             style: const TextStyle(color: Colors.black, fontSize: 23),
           ))
-        ])
+        ]),
+        Align(alignment: Alignment.bottomLeft,
+            child:TextButton(
+              onPressed: () {
+                AuthService().logOut();
+
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LandingPage()),
+                );
+              }, child: Text(
+                  'Выйти',
+                  style: TextStyle(color: Colors.black, fontSize: 25),
+                ),
+            ))
       ],
     );
   }
