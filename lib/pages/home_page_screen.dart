@@ -31,7 +31,7 @@ class _HomePageScreenWidgetsState extends State<HomePageScreenWidgets> {
             MealNowWidget(),
               SizedBox(height: 5.h,),
           
-             //CalorieIntakeWidget(),
+             CalorieIntakeWidget(),
              SizedBox(height: 5.h,),
             const ReminerOfWaterWidget(),
             SizedBox(height: 5.h,),

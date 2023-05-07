@@ -12,37 +12,37 @@ class ScheduleWidget extends StatelessWidget {
     ScheduleItem(
       time: '08:00',
       title: 'Подъём',
-      description: 'Time to start the day!',
+      description: 'Время начинать день!',
     ),
     ScheduleItem(
       time: '08:30',
       title: 'Зарядка',
-      description: 'Stay fit and healthy.',
+      description: 'Оставайся здоровым и в форме',
     ),
     ScheduleItem(
       time: '09:00',
       title: 'Завтрак',
-      description: 'A healthy breakfast fuels the day.',
+      description: 'Здоровый завтрак - топливо на весь день',
     ),
     ScheduleItem(
       time: '12:00',
       title: 'Обед',
-      description: 'Take a break and refuel.',
+      description: 'Время на небольшой перерыв',
     ),
     ScheduleItem(
       time: '18:00',
       title: 'Ужин',
-      description: 'A good dinner is a good night\'s sleep.',
+      description: 'Хороший ужин - залог хорошего сна',
     ),
     ScheduleItem(
       time: '19:00',
       title: 'Тренировка',
-      description: 'A good dinner is a good night\'s sleep.',
+      description: 'Будь в своей лучшей форме каждый день',
     ),
     ScheduleItem(
       time: '23:00',
       title: 'Сон',
-      description: 'A good dinner is a good night\'s sleep.',
+      description: 'Сон делает нас радостными, а хороший сон - счастливыми',
     ),
   ];
 
@@ -87,7 +87,6 @@ class ScheduleWidget extends StatelessWidget {
 
   Widget _buildHeader(BuildContext context) {
     final now = DateTime.now();
-    //final timeFormat = TimeOfDayFormat.HH_colon_mm;
     final time = TimeOfDay.fromDateTime(now).format(context);
 
     return Column(

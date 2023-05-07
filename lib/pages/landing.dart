@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-import 'package:get/utils.dart';
 import 'package:health_helper/Services/database.dart';
 import 'package:health_helper/domain/user.dart';
 import 'package:health_helper/pages/auth.dart';
@@ -16,6 +14,7 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< Updated upstream
     final AuthUser? user = Provider.of<AuthUser?>(context);
     final bool isloggedIn = user != null;
     dynamic Screen = WelcomeScreen();
@@ -33,5 +32,16 @@ class LandingPage extends StatelessWidget {
     setParametrsForBMI();
 
     return (BMICalculator.getBMI() == null) ? WelcomeScreen() : HomePageScreen();
+=======
+    /*final AuthUser? user=Provider.of<AuthUser?>(context);
+    final bool isloggedIn = user!=null;
+    dynamic Screen=HomePageScreen();
+    if(DatabaseService().getdata()==null){
+       Screen=WelcomeScreen();
+    }*/
+
+    // return isloggedIn ? Screen: AuthorizationPage();
+    return WelcomeScreen();
+>>>>>>> Stashed changes
   }
 }

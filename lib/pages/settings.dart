@@ -36,9 +36,9 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
 
   Future<void> init() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final double weight = prefs.getDouble('weight') ?? 0;
-    final num height = prefs.getDouble('height') ?? 0;
-    final double age = prefs.getDouble('age') ?? 0;
+    final int weight = prefs.getInt('weight') ?? 0;
+    final int height = prefs.getInt('height') ?? 0;
+    final int age = prefs.getInt('age') ?? 0;
     weightController = TextEditingController(text: weight.toString());
     heightController = TextEditingController(text: height.toString());
     ageController = TextEditingController(text: age.toString());
@@ -67,7 +67,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                         BMICalculator.setBMI(
                           BMICalculator.calculateBMI(
                             double.parse(text),
-                            int.parse(heightController.text),
+                            double.parse(heightController.text),
                             int.parse(ageController.text),
                           ),
                         );
@@ -216,9 +216,15 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                                 builder: (context) => LandingPage()),
                           );
                         },
-                        child: const Text(
-                          'Выйти',
-                          style: TextStyle(color: Colors.black, fontSize: 25),
+                        child:  Row(
+                          children: [
+                            Icon(Icons.exit_to_app,color: Colors.black,),
+                            SizedBox(width: 1.w,),
+                            Text(
+                              'Выйти',
+                              style: TextStyle(color: Colors.black, fontSize: 25),
+                            ),
+                          ],
                         ),
                       ),
                     ],

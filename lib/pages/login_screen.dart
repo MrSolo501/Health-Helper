@@ -32,8 +32,8 @@ class _LoginScreenState extends State<LoginScreen> {
   void _login() {
     //var bmi = BmiResultScreen(weight:_weightController, height:_heightController, age:_ageController);
     if (_formKey.currentState!.validate()) {
-      double weight = double.parse(weightController.text);
-      double height = double.parse(heightController.text);
+      int weight = int.parse(weightController.text);
+      int height = int.parse(heightController.text);
       int age = int.parse(ageController.text);
 
       BMICalculator.setParametrsForBMI(weight, height, age);
@@ -87,8 +87,6 @@ class _LoginScreenState extends State<LoginScreen> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Введите ваш вес';
-                } else if (double.parse(value) > 500) {
-                  return 'Некорректный ввод данных';
                 } else if (double.parse(value) <= 0) {
                   return 'Некорректный ввод данных';
                 }
@@ -111,8 +109,6 @@ class _LoginScreenState extends State<LoginScreen> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Введите ваш рост';
-                } else if (double.parse(value) > 500) {
-                  return 'Некорректный ввод данных';
                 } else if (double.parse(value) <= 0) {
                   return 'Некорректный ввод данных';
                 }
@@ -135,9 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Введите ваш возраст';
-                } else if (double.parse(value) > 500) {
-                  return 'Некорректный ввод данных';
-                } else if (double.parse(value) <= 0) {
+                }  else if (double.parse(value) <= 0) {
                   return 'Некорректный ввод данных';
                 }
                 return null;
