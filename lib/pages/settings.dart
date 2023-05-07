@@ -214,7 +214,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => WelcomeScreen()),
+                                builder: (context) => LandingPage()),
                           );
                         },
                         child:  Row(

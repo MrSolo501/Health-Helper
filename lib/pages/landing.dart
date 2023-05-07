@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:health_helper/Services/database.dart';
 import 'package:health_helper/domain/user.dart';
@@ -17,9 +19,10 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-   int? weight;
-   int? height;
-   int? age;
+  int weight = 0;
+  int? height;
+  int? age;
+
   @override
   void initState() {
     init();
@@ -28,9 +31,9 @@ class _LandingPageState extends State<LandingPage> {
 
   Future<void> init() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final int weight = prefs.getInt('weight') ?? 0;
-    final int height = prefs.getInt('height') ?? 0;
-    final int age = prefs.getInt('age') ?? 0;
+    weight = prefs.getInt('weight') ?? 0;
+    height = prefs.getInt('height') ?? 0;
+    age = prefs.getInt('age') ?? 0;
   }
 
   @override
@@ -41,12 +44,18 @@ class _LandingPageState extends State<LandingPage> {
     /* if(DatabaseService().getdata()!=null){
        Screen=HomePageScreen();
     }*/
-    
 
-    
+    Future<double?> _checkUserLoggedIn() async {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      return prefs
+          .getDouble('imt'); //  Just a get method from shared preferences
+    }
 
-    return ( weight == 0)
-        ? WelcomeScreen()
-        : HomePageScreen();
+    return FutureBuilder<double?>(
+        future: _checkUserLoggedIn(),
+        builder: (context, snapshot) {
+          double t = snapshot.data ?? 0.0;
+          return (t==0.0) ? WelcomeScreen() : HomePageScreen();
+        });
   }
 }
