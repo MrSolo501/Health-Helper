@@ -9,39 +9,44 @@ import 'package:health_helper/widgets/bmi_calculator.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
   @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+   int? weight;
+   int? height;
+   int? age;
+  @override
+  void initState() {
+    init();
+    super.initState();
+  }
+
+  Future<void> init() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final int weight = prefs.getInt('weight') ?? 0;
+    final int height = prefs.getInt('height') ?? 0;
+    final int age = prefs.getInt('age') ?? 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
     final AuthUser? user = Provider.of<AuthUser?>(context);
     final bool isloggedIn = user != null;
     dynamic Screen = WelcomeScreen();
     /* if(DatabaseService().getdata()!=null){
        Screen=HomePageScreen();
     }*/
-    Future<void> setParametrsForBMI() async {
-      final SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.getDouble(
-        'weight',
-      );
-      
-    }
+    
 
-    setParametrsForBMI();
+    
 
-    return (BMICalculator.getBMI() == null) ? WelcomeScreen() : HomePageScreen();
-=======
-    /*final AuthUser? user=Provider.of<AuthUser?>(context);
-    final bool isloggedIn = user!=null;
-    dynamic Screen=HomePageScreen();
-    if(DatabaseService().getdata()==null){
-       Screen=WelcomeScreen();
-    }*/
-
-    // return isloggedIn ? Screen: AuthorizationPage();
-    return WelcomeScreen();
->>>>>>> Stashed changes
+    return ( weight == 0)
+        ? WelcomeScreen()
+        : HomePageScreen();
   }
 }

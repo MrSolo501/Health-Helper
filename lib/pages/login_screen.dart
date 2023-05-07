@@ -37,9 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
       int age = int.parse(ageController.text);
 
       BMICalculator.setParametrsForBMI(weight, height, age);
-      DatabaseService().Addage(age);
-      DatabaseService().Addweight(weight);
-      DatabaseService().Addheight(height);
+      //DatabaseService().Addage(age);
+      /*DatabaseService().Addweight(weight);
+      DatabaseService().Addheight(height);*/
 
       Navigator.of(context).push(
         MaterialPageRoute(

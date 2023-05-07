@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health_helper/Services/auth.dart';
 import 'package:health_helper/pages/landing.dart';
+import 'package:health_helper/pages/welcome_page.dart';
 import 'package:health_helper/widgets/bmi_calculator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
@@ -213,7 +214,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LandingPage()),
+                                builder: (context) => WelcomeScreen()),
                           );
                         },
                         child:  Row(
