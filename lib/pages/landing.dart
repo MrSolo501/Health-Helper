@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
+import 'package:health_helper/Services/database.dart';
 import 'package:health_helper/domain/user.dart';
 import 'package:health_helper/pages/auth.dart';
 import 'package:health_helper/pages/home_page.dart';
@@ -15,8 +16,11 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final AuthUser? user=Provider.of<AuthUser?>(context);
     final bool isloggedIn = user!=null;
-//final MyController myController = Get.find();
+    dynamic Screen=HomePageScreen();
+    if(DatabaseService().getdata()==null){
+       Screen=WelcomeScreen();
+    }
 
-    return isloggedIn ? WelcomeScreen(): AuthorizationPage();
+    return isloggedIn ? Screen: AuthorizationPage();
   }
 }
