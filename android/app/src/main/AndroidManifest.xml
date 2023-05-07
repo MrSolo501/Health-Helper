@@ -3,6 +3,7 @@
     package="com.example.health_helper">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <application
         android:label="Health Helper"
         android:name="${applicationName}"

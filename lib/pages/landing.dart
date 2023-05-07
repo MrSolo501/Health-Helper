@@ -16,9 +16,9 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final AuthUser? user=Provider.of<AuthUser?>(context);
     final bool isloggedIn = user!=null;
-    dynamic Screen=HomePageScreen();
-    if(DatabaseService().getdata()==null){
-       Screen=WelcomeScreen();
+    dynamic Screen=WelcomeScreen();
+    if(DatabaseService().getdata()!=null){
+       Screen=HomePageScreen();
     }
 
     return isloggedIn ? Screen: AuthorizationPage();
