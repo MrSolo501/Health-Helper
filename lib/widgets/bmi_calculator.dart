@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:health_helper/Services/database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class BMICalculator {
@@ -12,6 +13,8 @@ class BMICalculator {
   static Future<void> setBMI(double bmi) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setDouble('imt', double.parse(bmi.toStringAsFixed(1)));
+    
+    await DatabaseService().AddBmi(bmi);
   }
   
    static Future<double> getBMI() async {

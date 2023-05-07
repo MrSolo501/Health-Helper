@@ -4,12 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:health_helper/Services/auth.dart';
 import 'package:health_helper/domain/user.dart';
 import 'package:health_helper/pages/landing.dart';
-import 'package:health_helper/pages/login_screen.dart';
 import 'package:sizer/sizer.dart';
-import 'package:health_helper/pages/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 
 void main() async {

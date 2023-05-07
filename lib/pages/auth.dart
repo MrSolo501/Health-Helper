@@ -88,11 +88,11 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
               Padding(
                   padding: EdgeInsets.only(bottom: 20, top: 10),
                   child:
-                  _input(Icon(Icons.email), "EMAIL", _emailController, false)),
+                  _input(Icon(Icons.email), "ПОЧТА", _emailController, false)),
               Padding(
                   padding: EdgeInsets.only(bottom: 20, top: 10),
                   child: _input(
-                      Icon(Icons.lock), "PASSWORD", _passwordController, true)),
+                      Icon(Icons.lock), "ПАРОЛЬ", _passwordController, true)),
               SizedBox(height: 20),
               Padding(
                   padding: EdgeInsets.only(left: 20, right: 20),

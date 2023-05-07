@@ -11,7 +11,8 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(242, 232, 207, 1),
+        resizeToAvoidBottomInset:true,
+        backgroundColor: const Color.fromRGBO(242, 232, 207, 1),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.0.w, vertical: 5.0.h),

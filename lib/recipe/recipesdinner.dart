@@ -104,35 +104,6 @@ class Recipesdinner extends StatelessWidget {
         builder: (context, snapshot) {
           double bmi = snapshot.data ?? 0;
           if (bmi >= 25) {
-      _dishes.clear();
-      _dishes.addAll([
-        Dishes(
-          cooktime: '30 мин',
-          title: 'Рыба на пару',
-          image: 'assets/images/ужин1(fat).jpg',
-        ),
-        Dishes(
-          cooktime: '45 мин',
-          title: 'Печень говядины',
-          image: 'assets/images/ужин2(fat).jpg',
-        ),
-        Dishes(
-          cooktime: '30 мин',
-          title: 'Мясная запеканка',
-          image: 'assets/images/ужин3(fat).jpg',
-        ),
-        Dishes(
-          cooktime: '45 мин',
-          title: 'Удон с курицей и овощами',
-          image: 'assets/images/ужин4(fat).jpg',
-        ),
-        Dishes(
-          cooktime: '40 мин',
-          title: 'Тушёная капуста с грибами ',
-          image: 'assets/images/ужин5(fat).jpg',
-        ),
-      ]);
-
       _recipes.clear();
       _recipes.addAll([
         const DescriptionRecipe(
@@ -182,34 +153,6 @@ class Recipesdinner extends StatelessWidget {
         ),
       ]);
     } else if (bmi < 18.6) {
-      _dishes.clear();
-      _dishes.addAll([
-        Dishes(
-          cooktime: '1 час ',
-          title: 'Куриное филе, отварной картофель',
-          image: 'assets/images/ужин1(low).jpg',
-        ),
-        Dishes(
-          cooktime: '20 мин',
-          title: 'Треска с рисом с добавлением сливочного соуса',
-          image: 'assets/images/ужин2(low).jpg',
-        ),
-        Dishes(
-          cooktime: '40 мин',
-          title: 'Рецепт пюре из картошки с запеченным минтаем',
-          image: 'assets/images/ужин3(low).jpg',
-        ),
-        Dishes(
-          cooktime: '20 минут',
-          title: 'Яичная лапша со свининой и овощами',
-          image: 'assets/images/ужин4(low).jpg',
-        ),
-        Dishes(
-          cooktime: '50 мин',
-          title: 'Мясо по французски из свинины с помидорами',
-          image: 'assets/images/ужин5(low).jpg',
-        ),
-      ]);
 
       _recipes.clear();
       _recipes.addAll([
@@ -255,7 +198,6 @@ class Recipesdinner extends StatelessWidget {
             itemCount: 5,
             itemExtent: 30.h,
             itemBuilder: (BuildContext context, int index) {
-              final dishes = _dishes[index];
               final Recipes=_recipes[index];
               return GestureDetector(
                   onTap: () {
@@ -263,10 +205,10 @@ class Recipesdinner extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => recipes(
-                                  image: dishes.image,
-                                  title: dishes.title,
+                                  image: Recipes.image,
+                                  title: Recipes.title,
                                   ingridients: Recipes.ingridients,
-                                  Stepscooking: Recipes.Stepscooking, cooktime: dishes.cooktime,
+                                  Stepscooking: Recipes.Stepscooking, cooktime: Recipes.cooktime,
                                 )));
                   },
                   child: Container(
@@ -280,7 +222,7 @@ class Recipesdinner extends StatelessWidget {
                               colorFilter: ColorFilter.mode(
                                   Colors.black.withOpacity(0.35),
                                   BlendMode.multiply),
-                              image: AssetImage(dishes.image),
+                              image: AssetImage(Recipes.image),
                               fit: BoxFit.cover)),
                       child: Stack(
                         children: [
@@ -289,7 +231,7 @@ class Recipesdinner extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 0.5.sp),
                               child: Text(
-                                dishes.title,
+                                Recipes.title,
                                 style: TextStyle(fontSize: 23.sp, color: Colors.white),
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
@@ -310,7 +252,7 @@ class Recipesdinner extends StatelessWidget {
                                 children: [
                                   Icon(Icons.timer, color: Colors.white, size: 18.sp),
                                   Text(
-                                    dishes.cooktime,
+                                    Recipes.cooktime,
                                     style: const TextStyle(color: Colors.white),
                                   )
                                 ],

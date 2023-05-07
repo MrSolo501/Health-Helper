@@ -20,24 +20,6 @@ class Dishes{
 
 class Recipeslunch extends StatelessWidget {
 
-
-  final List<Dishes> _dishes=[Dishes( cooktime: '1 час 30 мин',
-    title: 'Уха, мясное блюдо из запечённой птицы с гарниром из овощей',
-    image: 'assets/images/обед1.jpg',)
-    ,Dishes( cooktime: '2 часа',
-      title: 'Филе индейки, отварная картошка',
-      image: 'assets/images/обед2.jpg',)
-    ,Dishes( cooktime: '30 мин',
-      title: 'Куриная грудка, гречка с грибами',
-      image: 'assets/images/обед3.jpg',)
-    ,Dishes( cooktime: '1 час 20 мин',
-      title: 'Плов из свинины',
-      image: 'assets/images/обед4.jpg',)
-    ,Dishes( cooktime: '50 мин',
-      title: 'Гуляш из филе курицы',
-      image: 'assets/images/обед5.jpg',)
-    ,];
-
   final _recipes = [
     const DescriptionRecipe(
       image: 'assets/images/обед1.jpg',
@@ -94,24 +76,6 @@ class Recipeslunch extends StatelessWidget {
         builder: (context, snapshot) {
           double bmi = snapshot.data ?? 0;
           if(bmi>=25){
-      _dishes.clear();
-      _dishes.addAll([Dishes( cooktime: '20 мин',
-        title: 'Овощной салат',
-        image: 'assets/images/обед1(fat).jpg',)
-        ,Dishes( cooktime: '40 мин',
-          title: 'Овощное рагу',
-          image: 'assets/images/обед2(fat).jpg',)
-        ,Dishes( cooktime: '25 мин',
-          title: 'Грибной крем суп',
-          image: 'assets/images/обед3(fat).jpg',)
-        ,Dishes( cooktime: '35 мин',
-          title: 'Суп с фрикадельками без картофеля',
-          image: 'assets/images/обед4(fat).jpg',)
-        ,Dishes( cooktime: '2 часа',
-          title: 'Отварная говядина, овощной бульон',
-          image: 'assets/images/обед5(fat).jpg',)
-        ,]);
-
       _recipes.clear();
       _recipes.addAll([
         const DescriptionRecipe(
@@ -160,23 +124,6 @@ class Recipeslunch extends StatelessWidget {
         ),
       ]);
     }else if (bmi<18.6){
-      _dishes.clear();
-      _dishes.addAll([Dishes( cooktime: '1 час',
-        title: 'Паста с говядиной в томатном соусе, фрукты, стакан молока',
-        image: 'assets/images/обед1(low).jpg',)
-        ,Dishes( cooktime: '3 часа',
-          title: 'Телятина с баклажанами, картошкой и другими овощами',
-          image: 'assets/images/обед2(low).jpg',)
-        ,Dishes( cooktime: '1 час 20 мин',
-          title: 'Суп из свежей капусты с мясом',
-          image: 'assets/images/обед3(low).jpg',)
-        ,Dishes( cooktime: '3 часа',
-          title: 'Мясная солянка',
-          image: 'assets/images/обед4(low).jpg',)
-        ,Dishes( cooktime: '40 мин',
-          title: 'Картофельное пюре с жареной рыбой',
-          image: 'assets/images/обед5(low).jpg',)
-        ,]);
       _recipes.clear();
       _recipes.addAll([
         const DescriptionRecipe(
@@ -229,7 +176,6 @@ class Recipeslunch extends StatelessWidget {
             itemCount: 5,
             itemExtent: 30.h,
             itemBuilder: (BuildContext context,int index) {
-              final dishes=_dishes[index];
               final Recipes=_recipes[index];
               return GestureDetector(
                   onTap: () {
@@ -237,10 +183,10 @@ class Recipeslunch extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => recipes(
-                              image: dishes.image,
-                              title: dishes.title,
+                              image: Recipes.image,
+                              title: Recipes.title,
                               ingridients: Recipes.ingridients,
-                              Stepscooking: Recipes.Stepscooking, cooktime: dishes.cooktime,
+                              Stepscooking: Recipes.Stepscooking, cooktime: Recipes.cooktime,
                             )));
                   },
                   child: Container(
@@ -257,7 +203,7 @@ class Recipeslunch extends StatelessWidget {
                               colorFilter: ColorFilter.mode(
                                   Colors.black.withOpacity(0.35),
                                   BlendMode.multiply),
-                              image: AssetImage(dishes.image),
+                              image: AssetImage(Recipes.image),
                               fit: BoxFit.cover)),
                       child: Stack(
                         children: [
@@ -266,7 +212,7 @@ class Recipeslunch extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 0.5.w),
                               child: Text(
-                                dishes.title,
+                                Recipes.title,
                                 style: TextStyle(fontSize: 23.sp, color: Colors.white),
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
@@ -287,7 +233,7 @@ class Recipeslunch extends StatelessWidget {
                                 children: [
                                   Icon(Icons.timer, color: Colors.white, size: 18.sp),
                                   Text(
-                                    dishes.cooktime,
+                                    Recipes.cooktime,
                                     style: const TextStyle(color: Colors.white),
                                   )
                                 ],

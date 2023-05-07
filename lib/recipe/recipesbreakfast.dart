@@ -18,34 +18,6 @@ class Dishes {
 class Recipesbreakfast extends StatelessWidget {
   //final MyController myController = Get.find();
 
-  final _dishes = [
-    Dishes(
-      cooktime: '7 мин',
-      title: 'Нежирный творог с фруктами',
-      image: 'assets/images/завтрак1.jpg',
-    ),
-    Dishes(
-      cooktime: '40 мин',
-      title: 'Каша на молоке с маслом, отварное яйцо',
-      image: 'assets/images/завтрак2.jpg',
-    ),
-    Dishes(
-      cooktime: '10 мин',
-      title: 'Яичница глазунья с помидорами и колбасой',
-      image: 'assets/images/завтрак3.jpg',
-    ),
-    Dishes(
-      cooktime: '30 мин',
-      title: 'Молочная каша с овсяными хлопьями и изюмом, кофе с молоком',
-      image: 'assets/images/завтрак4.jpg',
-    ),
-    Dishes(
-      cooktime: '1 час',
-      title: 'Запеканка творожная с мукой',
-      image: 'assets/images/завтрак5.jpg',
-    ),
-  ];
-
   final _recipes = [
     const DescriptionRecipe(
       image: 'assets/images/завтрак1.jpg',
@@ -105,34 +77,6 @@ class Recipesbreakfast extends StatelessWidget {
           double bmi = snapshot.data ?? 0;
 
           if (bmi >= 25) {
-            _dishes.clear();
-            _dishes.addAll([
-              Dishes(
-                cooktime: '30 мин',
-                title: 'Сырники из творога с мукой',
-                image: 'assets/images/завтрак1(fat).jpg',
-              ),
-              Dishes(
-                cooktime: '35 мин',
-                title: 'Овсяная каша с грушей',
-                image: 'assets/images/завтрак2(fat).jpg',
-              ),
-              Dishes(
-                cooktime: '20 мин',
-                title: 'Гречневая каша с молоком',
-                image: 'assets/images/завтрак3(fat).jpg',
-              ),
-              Dishes(
-                cooktime: '25 мин',
-                title: 'Рисовая каша на воде',
-                image: 'assets/images/завтрак4(fat).jpg',
-              ),
-              Dishes(
-                cooktime: '20 мин',
-                title: 'Молочная лапша',
-                image: 'assets/images/завтрак5(fat).jpg',
-              ),
-            ]);
             _recipes.clear();
             _recipes.addAll([
               const DescriptionRecipe(
@@ -182,34 +126,6 @@ class Recipesbreakfast extends StatelessWidget {
               ),
             ]);
           } else if (bmi < 18.6) {
-            _dishes.clear();
-            _dishes.addAll([
-              Dishes(
-                cooktime: '20 мин',
-                title: 'Омлет с сыром и ветчиной',
-                image: 'assets/images/завтрак1(low).jpg',
-              ),
-              Dishes(
-                cooktime: '10 мин',
-                title: 'Овсяная каша с орехами и бананом',
-                image: 'assets/images/завтрак2(low).jpg',
-              ),
-              Dishes(
-                cooktime: '1 час',
-                title: 'Рисовая каша с бананами и мускатным орехом',
-                image: 'assets/images/завтрак3(low).jpg',
-              ),
-              Dishes(
-                cooktime: '40 мин',
-                title: 'Гречневая каша с тушёнкой',
-                image: 'assets/images/завтрак4(low).jpg',
-              ),
-              Dishes(
-                cooktime: '1 час',
-                title: 'Макароны с мясными тефтелями',
-                image: 'assets/images/завтрак5(low).jpg',
-              ),
-            ]);
             _recipes.clear();
             _recipes.addAll([
               const DescriptionRecipe(
@@ -263,7 +179,6 @@ class Recipesbreakfast extends StatelessWidget {
               itemCount: 5,
               itemExtent: 30.h,
               itemBuilder: (BuildContext context, int index) {
-                final dishes = _dishes[index];
                 final Recipes = _recipes[index];
                 return GestureDetector(
                     onTap: () {
@@ -271,11 +186,11 @@ class Recipesbreakfast extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => recipes(
-                                    image: dishes.image,
-                                    title: dishes.title,
+                                    image: Recipes.image,
+                                    title: Recipes.title,
                                     ingridients: Recipes.ingridients,
                                     Stepscooking: Recipes.Stepscooking,
-                                    cooktime: dishes.cooktime,
+                                    cooktime: Recipes.cooktime,
                                   )));
                     },
                     child: Container(
@@ -290,7 +205,7 @@ class Recipesbreakfast extends StatelessWidget {
                                 colorFilter: ColorFilter.mode(
                                     Colors.black.withOpacity(0.35),
                                     BlendMode.multiply),
-                                image: AssetImage(dishes.image),
+                                image: AssetImage(Recipes.image),
                                 fit: BoxFit.cover)),
                         child: Stack(
                           children: [
@@ -300,7 +215,7 @@ class Recipesbreakfast extends StatelessWidget {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 0.5),
                                 child: Text(
-                                  dishes.title,
+                                  Recipes.title,
                                   style: TextStyle(
                                       fontSize: 20.sp, color: Colors.white),
                                   overflow: TextOverflow.ellipsis,
@@ -323,7 +238,7 @@ class Recipesbreakfast extends StatelessWidget {
                                     const Icon(Icons.timer,
                                         color: Colors.white, size: 18),
                                     Text(
-                                      dishes.cooktime,
+                                      Recipes.cooktime,
                                       style:
                                           const TextStyle(color: Colors.white),
                                     )
