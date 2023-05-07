@@ -16,6 +16,13 @@ class BMICalculator {
     
     await DatabaseService().AddBmi(bmi);
   }
+   static Future<void> setParametrsForBMI(num weight, num height, int age ) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setDouble('weight', double.parse(weight.toStringAsFixed(1)));
+    prefs.setDouble('height', double.parse(height.toStringAsFixed(1)));
+    prefs.setDouble('age', double.parse(age.toStringAsFixed(1)));
+   
+  }
   
    static Future<double> getBMI() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
