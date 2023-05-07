@@ -20,11 +20,11 @@ class  DatabaseService{
     return await _heightCollection.doc('height').set({'height':height});
   }
 
-  dynamic getdata() async {
+  /*dynamic getdata() async {
     final DocumentReference docRef = _ageCollection.doc('age');
     final DocumentSnapshot docSnapshot = await docRef.get();
     if (docSnapshot.exists) {
       return docSnapshot.data();
     }
-  }
+  }*/
 }
