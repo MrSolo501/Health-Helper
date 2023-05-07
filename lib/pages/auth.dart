@@ -29,8 +29,10 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
           child: TextField(
               controller: controller,
               obscureText: obscure,
-              style: TextStyle(fontSize: 20, color: Colors.black),
+              cursorColor: Colors.white,
+              style: TextStyle(fontSize: 20, color: Colors.white),
               decoration: InputDecoration(
+                
                   hintStyle: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -74,7 +76,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
         child: Text(text,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.indigo,
+                color: Colors.green,
                 fontSize: 20)),
       );
     }
@@ -154,7 +156,8 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.indigo,
+       backgroundColor: Colors.green,
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: <Widget>[
           _logo(),

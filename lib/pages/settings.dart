@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:health_helper/Services/auth.dart';
 import 'package:health_helper/pages/landing.dart';
 import 'package:health_helper/widgets/bmi_calculator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 import 'login_screen.dart';
 
@@ -22,6 +23,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
     }
   }
 
+  final MyController myControllerSettings = Get.put(MyController());
   final MyController myController = Get.find();
 
   late TextEditingController weightController;
@@ -203,21 +205,39 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
             style: const TextStyle(color: Colors.black, fontSize: 23),
           ))
         ]),
-        Align(alignment: Alignment.bottomLeft,
-            child:TextButton(
-              onPressed: () {
-                AuthService().logOut();
-
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => LandingPage()),
-                );
-              }, child: Text(
-                  'Выйти',
-                  style: TextStyle(color: Colors.black, fontSize: 25),
+        SizedBox(
+          height: 20.h,
+        ),
+        Align(
+            alignment: Alignment.bottomLeft,
+            child: Row(
+              children: [
+                SizedBox(width: 5.w),
+                TextButton(
+                  onPressed: () async {
+                    AuthService().logOut();
+                    SharedPreferences preferences =
+                        await SharedPreferences.getInstance();
+                    await preferences.clear();
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => LandingPage()),
+                    );
+                  },
+                  child: const Text(
+                    'Выйти',
+                    style: TextStyle(color: Colors.black, fontSize: 25),
+                  ),
                 ),
+              ],
             ))
       ],
     );
   }
+}
+
+class MyControllerSettings extends GetxController {
+  final weightController = TextEditingController();
+  final heightController = TextEditingController();
+  final ageController = TextEditingController();
 }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:health_helper/pages/result_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 
 class MyController extends GetxController {
-  final weightController = TextEditingController();
+  
+  
+  final weightController = TextEditingController( );
   final heightController = TextEditingController();
  final ageController = TextEditingController();
 }
@@ -17,6 +20,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  
   final _formKey = GlobalKey<FormState>();
    final MyController myController = Get.put(MyController());
   @override

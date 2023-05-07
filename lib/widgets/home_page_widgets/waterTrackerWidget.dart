@@ -18,7 +18,6 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
   void initState() {
     final now = DateTime.now();
     data = "${now.day}-${now.month}-${now.year}";
-    print(data);
 
     _initCounter();
 
@@ -28,10 +27,8 @@ class _WaterTrackerWidgetState extends State<WaterTrackerWidget> {
   void _initCounter() async {
     var prefs = await SharedPreferences.getInstance();
     if (data != prefs.getString('data')) {
-      print(111111111111111111);
       prefs.remove(counterKey);
       _setData();
-      
     }
     setState(() => _water = prefs.getInt(counterKey) ?? 0);
   }
